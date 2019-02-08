@@ -4,6 +4,7 @@
     name: "{{ packages }}"
   vars:
     packages:
+    - chrome-gnome-shell
     - default-jdk
     - flatpak
     - git

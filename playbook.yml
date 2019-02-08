@@ -1,6 +1,15 @@
 ---
 - hosts: all
   tasks:
+    - name: Enable third-party sources
+      lineinfile:
+        path: /etc/apt/sources.list
+        regexp: '^#\s?(deb\s{1,}.*partner)$'
+        line: '\g<1>'
+        backrefs: yes
+    - name: Update apt cache
+      apt:
+        update_cache: yes
     - import_role:
         name: common
       tags: ['common']
