@@ -4,8 +4,16 @@
     name: "{{ packages }}"
   vars:
     packages:
+    - default-jdk
+    - flatpak
     - git
+    - gnome-tweaks
+    - keepassxc
+    - nautilus-dropbox
     - ubuntu-restricted-extras
+    - synaptic
+    - terminator
     - vim
 
 - import_tasks: vi.yml
+- import_tasks: flatpak.yml
