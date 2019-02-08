@@ -1,0 +1,12 @@
+---
+- name: Creater Terminator's configuration folder if it's missing
+  file:
+    path: ~/.config/terminator
+    state: directory
+  become: no
+- name: Set Terminator's configuration if it's missing
+  copy:
+    src: ./roles/common/files/terminator/config
+    dest: ~/.config/terminator/config
+    force: no
+  become: no

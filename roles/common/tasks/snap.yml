@@ -1,0 +1,8 @@
+---
+# Starting Ansible 2.8 there should be a dedicated snap module.
+- name: Install snap classic packages
+  command: snap install "{{ item }}" --classic
+  with_items:
+    - hub
+
+- import_tasks: hub.yml

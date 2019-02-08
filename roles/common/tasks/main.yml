@@ -7,14 +7,17 @@
     - default-jdk
     - flatpak
     - git
+    - gimp
     - gnome-tweaks
     - keepassxc
     - nautilus-dropbox
     - ubuntu-restricted-extras
     - synaptic
+    - telegram-desktop
     - terminator
     - vim
 
 - import_tasks: flatpak.yml
+- import_tasks: snap.yml
 - import_tasks: terminator.yml
 - import_tasks: vi.yml

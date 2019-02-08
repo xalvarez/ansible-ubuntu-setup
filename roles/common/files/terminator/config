@@ -1,0 +1,36 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+  title_hide_sizetext = True
+[keybindings]
+  help = None
+  new_tab = <Primary><Shift>t
+  next_tab = <Primary><Shift>n
+  prev_tab = <Primary><Shift>p
+  split_horiz = <Alt>h
+  split_vert = <Alt>v
+  switch_to_tab_1 = <Primary><Shift>F1
+  switch_to_tab_10 = <Primary><Shift>F10
+  switch_to_tab_2 = <Primary><Shift>F2
+  switch_to_tab_3 = <Primary><Shift>F3
+  switch_to_tab_4 = <Primary><Shift>F4
+  switch_to_tab_5 = <Primary><Shift>F5
+  switch_to_tab_6 = <Primary><Shift>F6
+  switch_to_tab_7 = <Primary><Shift>F7
+  switch_to_tab_8 = <Primary><Shift>F8
+  switch_to_tab_9 = <Primary><Shift>F9
+  zoom_in = <Primary>KP_Add
+  zoom_out = <Primary>KP_Subtract
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    show_titlebar = False
