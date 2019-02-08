@@ -1,0 +1,11 @@
+---
+- name: Install apt packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - git
+    - ubuntu-restricted-extras
+    - vim
+
+- import_tasks: vi.yml
