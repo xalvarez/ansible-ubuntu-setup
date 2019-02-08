@@ -2,6 +2,9 @@
 
 This repository contains an Ansible playbook whose aim is to save time setting up Ubuntu machines.
 
+As this is a personal project and setting up a machine is quite subjective, in general I don't
+intent to accept pull requests which add new features.
+
 ## Requirements
 
 Only [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) is
