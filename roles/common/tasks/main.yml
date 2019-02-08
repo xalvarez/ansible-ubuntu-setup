@@ -15,5 +15,6 @@
     - terminator
     - vim
 
-- import_tasks: vi.yml
 - import_tasks: flatpak.yml
+- import_tasks: terminator.yml
+- import_tasks: vi.yml
