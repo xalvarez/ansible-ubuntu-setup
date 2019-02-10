@@ -13,4 +13,7 @@
     - import_role:
         name: common
       tags: ['common']
+    - import_role:
+        name: entertainment
+      tags: ['entertainment']
   become: yes

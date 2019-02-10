@@ -5,6 +5,7 @@
 - name: Install flatpak packages
   flatpak:
     name: "{{ item }}"
-  with_items:    
-    - com.visualstudio.code
-    - org.gimp.GIMP
+  with_items:
+    - com.discordapp.Discord
+    - com.skype.Client
+    - com.spotify.Client
