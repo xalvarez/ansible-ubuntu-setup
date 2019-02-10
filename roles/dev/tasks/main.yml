@@ -6,3 +6,6 @@
     packages:
     - default-jdk
     - git
+    - httpie
+
+- import_tasks: jetbrains-toolbox.yml

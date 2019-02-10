@@ -5,6 +5,7 @@
   vars:
     packages:
     - chrome-gnome-shell
+    - curl
     - flatpak
     - gnome-tweaks
     - keepassxc

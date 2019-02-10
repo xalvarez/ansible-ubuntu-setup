@@ -17,6 +17,6 @@
         name: entertainment
       tags: ['entertainment']
     - import_role:
-        name: development
-      tags: ['development']
+        name: dev
+      tags: ['dev']
   become: yes
