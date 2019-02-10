@@ -5,9 +5,7 @@
   vars:
     packages:
     - chrome-gnome-shell
-    - default-jdk
     - flatpak
-    - git
     - gnome-tweaks
     - keepassxc
     - nautilus-dropbox

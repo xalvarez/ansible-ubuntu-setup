@@ -1,0 +1,8 @@
+---
+- name: Install apt packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - default-jdk
+    - git
