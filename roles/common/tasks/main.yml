@@ -5,6 +5,7 @@
   vars:
     packages:
     - chrome-gnome-shell
+    - chromium-browser
     - curl
     - flatpak
     - gnome-tweaks
