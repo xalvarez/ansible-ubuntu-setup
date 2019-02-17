@@ -1,0 +1,11 @@
+---
+- name: Add Flathup repository
+  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install flatpak packages
+  flatpak:
+    name: "{{ item }}"
+  with_items:
+    - com.discordapp.Discord
+    - com.skype.Client
+    - com.spotify.Client
