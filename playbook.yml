@@ -7,9 +7,11 @@
         regexp: '^#\s?(deb\s{1,}.*partner)$'
         line: '\g<1>'
         backrefs: yes
-    - name: Update apt cache
+    - name: Update repos and upgrade all packages
       apt:
         update_cache: yes
+        upgrade: safe
+        force_apt_get: yes
     - import_role:
         name: common
       tags: ['common']
@@ -19,4 +21,9 @@
     - import_role:
         name: dev
       tags: ['dev']
+    - name: Remove useless apt packages and dependencies
+      apt:
+        autoremove: yes
+        autoclean: yes
+        force_apt_get: yes
   become: yes
