@@ -1,6 +1,0 @@
----
-- name: Create git alias for hub
-  lineinfile:
-    path: ~/.bashrc
-    line: "alias git='hub'"
-  become: no

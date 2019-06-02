@@ -5,6 +5,5 @@
 - name: Install flatpak packages
   flatpak:
     name: "{{ item }}"
-  with_items:    
-    - com.visualstudio.code
+  with_items:
     - org.gimp.GIMP
