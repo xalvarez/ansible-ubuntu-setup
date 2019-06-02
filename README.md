@@ -31,5 +31,5 @@ All tasks are contained in roles, and all roles are tagged. To skip a role, run 
 the flag `--skip-tags` followed by the name of the roles to skip, e.g.:
 
 ```
-ansible-playbook playbook.yml -i inventory --skip-tags common -K
+ansible-playbook playbook.yml -i inventory --skip-tags work -K
 ```

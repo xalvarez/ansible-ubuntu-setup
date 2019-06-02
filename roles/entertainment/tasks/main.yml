@@ -1,9 +1,2 @@
 ---
-- name: Install apt packages
-  apt:
-    name: "{{ packages }}"
-  vars:
-    packages:
-    - steam
-
 - import_tasks: flatpak.yml
