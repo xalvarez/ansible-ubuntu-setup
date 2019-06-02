@@ -1,3 +1,0 @@
----
-- name: Set default editor to vi
-  command: update-alternatives --set editor /usr/bin/vim.basic

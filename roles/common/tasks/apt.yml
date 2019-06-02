@@ -1,0 +1,27 @@
+---
+- name: Install apt packages
+  apt:
+    name: "{{ packages }}"
+    force_apt_get: yes
+  vars:
+    packages:
+    - chromium-browser
+    - curl
+    - default-jdk
+    - default-jdk-doc
+    - flatpak
+    - git
+    - httpie
+    - keepassxc
+    - openjdk-8-jdk
+    - openjdk-8-doc
+    - ubuntu-restricted-extras
+    - synaptic
+    - terminator
+    - vim
+
+- import_tasks: terminator.yml
+  become: no
+
+- name: Set default editor to vim
+  command: update-alternatives --set editor /usr/bin/vim.basic
