@@ -1,3 +1,11 @@
+visual_studio_code:
+  config: https://gist.githubusercontent.com/xalvarez/f6abc34fb56f766820db3a3cb1287a4a/raw/2b876c84bd464336e9dbdf80ff90a819be73928a/settings.json
+
 jetbrains_toolbox:
-  directory: jetbrains-toolbox-1.13.4801
-  filename: jetbrains-toolbox-1.13.4801.tar.gz
+  version: 1.14.5179
+
+terraform:
+  version: 0.11.13
+
+docker_compose:
+  version: 1.24.0

@@ -1,0 +1,23 @@
+---
+- name: Install classic snaps
+  snap:
+    name: "{{ item }}"
+    classic: yes
+  with_items:
+      - aws-cli
+      - code
+      - hub
+
+- name: Install non-classic snaps
+  snap:
+    name:
+      - insomnia
+
+- name: Create git alias for hub
+  lineinfile:
+    path: ~/.bashrc
+    line: "alias git='hub'"
+  become: no
+
+- import_tasks: visual_studio_code.yml
+  become: no

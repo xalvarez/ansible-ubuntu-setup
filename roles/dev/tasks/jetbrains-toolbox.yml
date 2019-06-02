@@ -1,19 +1,16 @@
 ---
 - name: Download JetBrains Toolbox
   get_url:
-    url: https://download.jetbrains.com/toolbox/{{ jetbrains_toolbox.filename }}
+    url: https://download.jetbrains.com/toolbox/jetbrains-toolbox-{{ jetbrains_toolbox.version }}.tar.gz
     dest: /tmp/
-  become: no
 
 - name: Unarchive JetBrains Toolbox
   unarchive:
-    src: /tmp/{{ jetbrains_toolbox.filename }}
+    src: /tmp/jetbrains-toolbox-{{ jetbrains_toolbox.version }}.tar.gz
     dest: /tmp
-  become: no
 
 - name: Copy JetBrains Toolbox to home directory
   copy:
-    src: /tmp/{{ jetbrains_toolbox.directory }}/
+    src: /tmp/jetbrains-toolbox-{{ jetbrains_toolbox.version }}/
     dest: ~/.local/bin/
     mode: u+x
-  become: no

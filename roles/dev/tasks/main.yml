@@ -1,11 +1,10 @@
 ---
-- name: Install apt packages
-  apt:
-    name: "{{ packages }}"
-  vars:
-    packages:
-    - default-jdk
-    - git
-    - httpie
+- import_tasks: snap.yml
 
 - import_tasks: jetbrains-toolbox.yml
+  become: no
+
+- import_tasks: terraform.yml
+  become: no
+
+- import_tasks: docker.yml

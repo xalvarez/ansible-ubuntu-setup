@@ -16,11 +16,14 @@
         name: common
       tags: ['common']
     - import_role:
+        name: dev
+      tags: ['dev']
+    - import_role:
         name: entertainment
       tags: ['entertainment']
     - import_role:
-        name: dev
-      tags: ['dev']
+        name: work
+      tags: ['work']
     - name: Remove useless apt packages and dependencies
       apt:
         autoremove: yes

@@ -1,0 +1,7 @@
+---
+- name: Install classic snaps
+  snap:
+    name: "{{ item }}"
+    classic: yes
+  with_items:
+      - aws-cli
