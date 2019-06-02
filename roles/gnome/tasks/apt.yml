@@ -1,0 +1,12 @@
+---
+- name: Install apt packages
+  apt:
+    name: "{{ packages }}"
+    force_apt_get: yes
+  vars:
+    packages:
+    - chrome-gnome-shell
+    - gnome-shell-extension-dash-to-panel
+    - gnome-shell-extension-trash
+    - gnome-shell-extension-weather
+    - gnome-tweaks

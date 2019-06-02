@@ -16,6 +16,9 @@
         name: common
       tags: ['common']
     - import_role:
+        name: gnome
+      tags: ['gnome']
+    - import_role:
         name: dev
       tags: ['dev']
     - import_role:
