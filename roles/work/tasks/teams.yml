@@ -1,0 +1,3 @@
+---
+- name: Allow teams to use webcam
+  command: snap connect teams-for-linux:camera core:camera

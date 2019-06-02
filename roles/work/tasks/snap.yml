@@ -5,3 +5,10 @@
     classic: yes
   with_items:
       - aws-cli
+
+- name: Install non-classic snaps
+  snap:
+    name:
+      - teams-for-linux
+
+- import_tasks: teams.yml
