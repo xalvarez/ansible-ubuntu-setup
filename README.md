@@ -2,15 +2,20 @@
 
 This repository contains an Ansible playbook whose aim is to save time setting up Ubuntu machines.
 
-As this is a personal project and setting up a machine is quite subjective, in general I don't
-intent to accept pull requests which add new features.
+The script is adapted to my own needs and preferences, so if you like the idea you might
+want to fork the project and change it however you like.
 
 ## Requirements
 
-Only [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) is
-required to execute the playbook.
+[Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) >= 2.8.0 is
+required to execute the playbook. You can install it by executing
+[install_ansible.sh](https://github.com/xavieralvarezjuste4260/jellyfish_ansible-ubuntu-setup/blob/master/install_ansible.sh):
 
-Do note that this playbook has only been tested with Ubuntu 18.04 and Ansible 2.7.7.
+```
+./install_ansible.sh
+```
+
+Do note that this playbook has only been tested with Ubuntu 18.04 and Ansible 2.8.0.
 
 ## Running the playbook
 
@@ -23,4 +28,8 @@ ansible-playbook playbook.yml -i inventory -K
 ### Skipping steps
 
 All tasks are contained in roles, and all roles are tagged. To skip a role, run the Ansible playbook with
-the flag `--skip-tags` followed by the name of the roles to skip.
+the flag `--skip-tags` followed by the name of the roles to skip, e.g.:
+
+```
+ansible-playbook playbook.yml -i inventory --skip-tags common -K
+```
