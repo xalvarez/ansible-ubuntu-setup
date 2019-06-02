@@ -1,4 +1,10 @@
 ---
+- name: Add .local/bin to $PATH
+  lineinfile:
+    path: ~/.bashrc
+    line: PATH="$HOME/.local/bin:$PATH"
+  become: no
+
 - name: Install apt packages
   apt:
     name: "{{ packages }}"
