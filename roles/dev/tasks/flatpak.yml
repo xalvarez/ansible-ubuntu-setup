@@ -6,5 +6,6 @@
   flatpak:
     name: "{{ item }}"
   with_items:
-    - org.gimp.GIMP
-    - com.github.fabiocolacio.marker
+    - com.getpostman.Postman
+    - org.remmina.Remmina
+    - us.zoom.Zoom
