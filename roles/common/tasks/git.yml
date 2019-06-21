@@ -1,0 +1,12 @@
+---
+- name: Set up git configuration
+  git_config:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    scope: global
+  with_items:
+    - { name: "color.ui", value: "auto" }
+    - { name: "fetch.prune", value: "true" }
+    - { name: "alias.co", value: "checkout" }
+    - { name: "alias.con", value: "checkout --no-track -b" }
+    - { name: "alias.fa", value: "fetch --all" }
