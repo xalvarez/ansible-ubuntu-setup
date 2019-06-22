@@ -1,0 +1,27 @@
+---
+- name: Disable automatic blank screen
+  command: 'gsettings set org.gnome.desktop.session idle-delay "uint32 0"'
+
+- name: Disable automatic screen lock
+  command: 'gsettings set org.gnome.desktop.screensaver lock-enabled false'
+
+- name: Hide notifications while screen is locked
+  command: 'gsettings set org.gnome.desktop.notifications show-in-lock-screen false'
+
+- name: Show date on clock
+  command: 'gsettings set org.gnome.desktop.interface clock-show-date true'
+
+- name: Show seconds on clock
+  command: 'gsettings set org.gnome.desktop.interface clock-show-seconds true'
+
+- name: Show seconds on clock
+  command: 'gsettings set org.gnome.desktop.interface clock-show-seconds true'
+
+- name: Show weekdays on calendar
+  command: 'gsettings set org.gnome.desktop.calendar show-weekdate true'
+
+- name: Move dock to bottom
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM'
+
+- name: Set dock icons' size to 34
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 34'

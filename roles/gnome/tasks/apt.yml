@@ -6,6 +6,7 @@
   vars:
     packages:
     - chrome-gnome-shell
+    - dconf-editor
     - gnome-shell-extension-dash-to-panel
     - gnome-shell-extension-trash
     - gnome-shell-extension-weather
