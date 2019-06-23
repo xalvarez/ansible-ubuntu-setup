@@ -23,8 +23,10 @@
 - name: Move dock to bottom
   command: 'gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM'
 
-- name: Set dock icons' size to 34
-  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 34'
+- name: Enable gnome-shell extensions (available after relogging in or restarting)
+  shell: "gsettings set org.gnome.shell enabled-extensions \"['gnome-shell-trash-extension', 'openweather-extension@jenslody.de', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com']\""
 
-- name: Enable gnome-shell extensions (available after restarting)
-  shell: "gsettings set org.gnome.shell enabled-extensions \"['dash-to-panel@jderose9.github.com', 'gnome-shell-trash-extension', 'openweather-extension@jenslody.de', 'user-theme@gnome-shell-extensions.gcampax.github.com']\""
+- import_tasks: openweather.yml
+  become: no
+
+- import_tasks: dash_to_dock.yml

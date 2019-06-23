@@ -1,0 +1,15 @@
+---
+- name: Set temperature unit to celsius
+  command: 'gsettings set org.gnome.shell.extensions.openweather unit celsius'
+
+- name: Set pressure unit to hPa
+  command: 'gsettings set org.gnome.shell.extensions.openweather pressure-unit hPa'
+
+- name: Set pressure unit to hPa
+  command: 'gsettings set org.gnome.shell.extensions.openweather pressure-unit hPa'
+
+- name: Set wind speed unit to kph
+  command: 'gsettings set org.gnome.shell.extensions.openweather wind-speed-unit kph'
+
+- name: Set city to Hamburg
+  command: 'gsettings set org.gnome.shell.extensions.openweather city "53.5437641,10.0099133>Hamburg, Deutschland >-1"'

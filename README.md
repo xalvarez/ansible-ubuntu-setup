@@ -25,6 +25,8 @@ In order to run this playbook execute the following command:
 ansible-playbook playbook.yml -i inventory -K
 ```
 
+Note that some changes won't be visible until your next login or until your system is restarted, e.g. GNOME Shell extensions' setup.
+
 ### Skipping steps
 
 All tasks are contained in roles, and all roles are tagged. To skip a role, run the Ansible playbook with

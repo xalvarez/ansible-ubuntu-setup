@@ -1,0 +1,18 @@
+---
+- name: Set dock's icon size to 34
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 34'
+
+- name: Enable dock's autohide
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock autohide true'
+
+- name: Show dock on mouse hover
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock require-pressure-to-show false'
+
+- name: Show dock on all monitors
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock multi-monitor true'
+
+- name: Modify dock size dynamically
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false'
+
+- name: Increase size between dock icons
+  command: 'gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink false'
