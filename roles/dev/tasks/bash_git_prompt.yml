@@ -1,0 +1,15 @@
+---
+- name: Clone bash-git-prompt
+  git:
+    repo: https://github.com/magicmonty/bash-git-prompt.git
+    dest: ~/.bash-git-prompt
+    depth: 1
+
+- name: Add bash-git-prompt config to .bashrc
+  blockinfile:
+    path: ~/.bashrc
+    block: |
+      if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+        GIT_PROMPT_ONLY_IN_REPO=1
+        source $HOME/.bash-git-prompt/gitprompt.sh
+      fi
