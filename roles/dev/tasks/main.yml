@@ -7,3 +7,6 @@
 
 - import_tasks: docker.yml
 - import_tasks: nodejs.yml
+
+- import_tasks: bash_git_prompt.yml
+  become: no
