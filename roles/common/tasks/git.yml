@@ -10,3 +10,6 @@
     - { name: "alias.co", value: "checkout" }
     - { name: "alias.con", value: "checkout --no-track -b" }
     - { name: "alias.fa", value: "fetch --all" }
+    - { name: "alias.sw", value: "switch" }
+    - { name: "alias.swn", value: "switch --no-track -c" }
+    - { name: "alias.rs", value: "restore" }
