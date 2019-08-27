@@ -1,5 +1,12 @@
 ---
+- name: Install maven
+  apt:
+    name: maven
+
 - import_tasks: snap.yml
+
+- import_tasks: terraform.yml
+  become: no
 
 - name: Download aws-vault
   get_url:

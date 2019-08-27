@@ -4,8 +4,5 @@ visual_studio_code:
 jetbrains_toolbox:
   version: 1.14.5179
 
-terraform:
-  version: 0.11.13
-
 docker_compose:
   version: 1.24.0

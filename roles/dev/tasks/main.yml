@@ -5,8 +5,5 @@
 - import_tasks: jetbrains_toolbox.yml
   become: no
 
-- import_tasks: terraform.yml
-  become: no
-
 - import_tasks: docker.yml
 - import_tasks: nodejs.yml
