@@ -9,3 +9,4 @@
   become: no
 
 - import_tasks: docker.yml
+- import_tasks: nodejs.yml
