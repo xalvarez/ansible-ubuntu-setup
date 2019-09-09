@@ -28,7 +28,9 @@
   become: no
 
 - name: Set default editor to vim
-  command: update-alternatives --set editor /usr/bin/vim.basic
+  alternatives:
+    name: editor
+    path: /usr/bin/vim.basic
 
 - import_tasks: git.yml
   become: no
