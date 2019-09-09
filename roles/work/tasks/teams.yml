@@ -1,3 +1,9 @@
 ---
+- name: Check if teams-for-linux has permissions to use cameras
+  command: snap connections teams-for-linux | grep -e :camera.*:camera
+  register: permissions_result
+  changed_when: False
+
 - name: Allow teams to use webcam
   command: snap connect teams-for-linux:camera core:camera
+  when: permissions_result.rc != 0
