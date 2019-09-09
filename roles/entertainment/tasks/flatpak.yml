@@ -1,6 +1,8 @@
 ---
 - name: Add Flathup repository
-  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: Install flatpak packages
   flatpak:

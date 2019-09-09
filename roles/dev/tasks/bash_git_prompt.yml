@@ -4,6 +4,7 @@
     repo: https://github.com/magicmonty/bash-git-prompt.git
     dest: ~/.bash-git-prompt
     depth: 1
+    version: master
 
 - name: Add bash-git-prompt config to .bashrc
   blockinfile:

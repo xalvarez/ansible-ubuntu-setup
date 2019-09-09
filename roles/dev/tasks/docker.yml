@@ -29,10 +29,14 @@
     - docker-ce-cli
     - containerd.io
 
+- name: Create docker group
+  group:
+    name: docker
+
 - name: Allow running Docker without sudo
-  shell: |
-    groupadd docker
-    usermod -aG docker $USER
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
 
 - name: Download Docker Compose
   get_url:
