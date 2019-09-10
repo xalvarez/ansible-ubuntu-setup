@@ -5,6 +5,7 @@
     classic: yes
   with_items:
       - aws-cli
+      - go
 
 - name: Install non-classic snaps
   snap:
