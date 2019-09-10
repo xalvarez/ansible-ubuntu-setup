@@ -37,6 +37,7 @@
   user:
     name: "{{ ansible_user }}"
     groups: docker
+    append: yes
 
 - name: Download Docker Compose
   get_url:
