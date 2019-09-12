@@ -12,3 +12,4 @@
   become: no
 
 - import_tasks: payara.yml
+- import_tasks: python.yml
