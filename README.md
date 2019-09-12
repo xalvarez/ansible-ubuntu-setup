@@ -36,3 +36,9 @@ the flag `--skip-tags` followed by the name of the roles to skip, e.g.:
 ```
 ansible-playbook playbook.yml -i inventory --skip-tags work -K
 ```
+
+You can also specify the tags you want to run, e.g.:
+
+```
+ansible-playbook playbook.yml -i inventory -K -t work
+```
