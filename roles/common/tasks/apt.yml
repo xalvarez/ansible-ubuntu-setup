@@ -19,6 +19,7 @@
     - keepassxc
     - openjdk-8-jdk
     - openjdk-8-doc
+    - tldr
     - ubuntu-restricted-extras
     - synaptic
     - terminator
