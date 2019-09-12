@@ -2,7 +2,7 @@ aws_vault:
   version: 4.6.4
 
 terraform:
-  version: 0.11.13
+  version: 0.11.14
 
 payara:
   version: 5.184
