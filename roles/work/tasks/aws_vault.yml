@@ -1,3 +1,4 @@
+---
 - name: Download aws-vault
   get_url:
     url: https://github.com/99designs/aws-vault/releases/download/v{{ aws_vault.version }}/aws-vault-linux-amd64

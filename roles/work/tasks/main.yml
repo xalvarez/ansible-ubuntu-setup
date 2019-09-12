@@ -10,3 +10,5 @@
 
 - import_tasks: aws_vault.yml
   become: no
+
+- import_tasks: payara.yml
