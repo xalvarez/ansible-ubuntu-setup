@@ -6,3 +6,6 @@ terraform:
 
 payara:
   version: 5.184
+
+python:
+  version: 3.7.4
