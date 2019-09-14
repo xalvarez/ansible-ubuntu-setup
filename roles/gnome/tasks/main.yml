@@ -1,5 +1,5 @@
 ---
 - import_tasks: apt.yml
 
-- import_tasks: gsettings.yml
+- import_tasks: dconf.yml
   become: no
