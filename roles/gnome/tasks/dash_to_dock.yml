@@ -1,0 +1,50 @@
+---
+- name: Show 'Dash to Dock' dock in all monitors (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/multi-monitor"
+    value: "true"
+
+- name: Enable 'Dash to Dock' autohide (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
+    value: "false"
+
+- name: Hide 'Dash to Dock' dock when any window obstructs it (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode"
+    value: "'ALL_WINDOWS'"
+
+- name: Disable 'Dash to Dock' panel mode (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/extend-height"
+    value: "false"
+
+- name: Disable 'Dash to Dock' fixed icon size (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/icon-size-fixed"
+    value: "false"
+
+- name: Hide 'Dash to Dock' application icon (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/show-show-apps-button"
+    value: "false"
+
+- name: Minimize or show preview when clicking on a running app (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/click-action"
+    value: "'minimize-or-previews'"
+
+- name: Minimize unfocused app with Shift+Click (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/shift-click-action"
+    value: "'minimize'"
+
+- name: Do not shrink 'Dash to Dock' dash (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink"
+    value: "false"
+
+- name: Use default 'Dash to Dock' opacity (available after restarting)
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/transparency-mode"
+    value: "'DEFAULT'"
