@@ -50,3 +50,6 @@
 
 - import_tasks: dash_to_dock.yml
   become: no
+
+- import_tasks: openweather.yml
+  become: no
