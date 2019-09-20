@@ -1,0 +1,11 @@
+---
+- name: Install apt packages
+  apt:
+    name: "{{ packages }}"
+    force_apt_get: yes
+  vars:
+    packages:
+    - maven
+    - python3.7
+    - python3.7-dev
+    - python3-pip

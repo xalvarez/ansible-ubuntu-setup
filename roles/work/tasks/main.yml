@@ -1,7 +1,5 @@
 ---
-- name: Install maven
-  apt:
-    name: maven
+- import_tasks: apt.yml
 
 - import_tasks: snap.yml
 
@@ -12,4 +10,3 @@
   become: no
 
 - import_tasks: payara.yml
-- import_tasks: python.yml
