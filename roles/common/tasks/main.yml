@@ -7,4 +7,6 @@
 
 - import_tasks: apt.yml
 - import_tasks: snap.yml
+
 - import_tasks: flatpak.yml
+  become: no

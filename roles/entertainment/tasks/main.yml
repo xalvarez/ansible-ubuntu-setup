@@ -1,2 +1,3 @@
 ---
 - import_tasks: flatpak.yml
+  become: no
