@@ -9,3 +9,4 @@
     name: "{{ item }}"
   with_items:
     - com.getpostman.Postman
+  become: no

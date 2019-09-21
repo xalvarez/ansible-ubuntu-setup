@@ -10,3 +10,4 @@
   with_items:
     - org.remmina.Remmina
     - us.zoom.Zoom
+  become: no
