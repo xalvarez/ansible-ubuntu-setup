@@ -9,4 +9,4 @@
     name: "{{ item }}"
   with_items:
     - org.gimp.GIMP
-    - com.github.fabiocolacio.marker
+  become: no

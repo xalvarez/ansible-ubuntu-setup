@@ -8,5 +8,6 @@
   flatpak:
     name: "{{ item }}"
   with_items:
-    - com.spotify.Client
+    - org.remmina.Remmina
+    - us.zoom.Zoom
   become: no
