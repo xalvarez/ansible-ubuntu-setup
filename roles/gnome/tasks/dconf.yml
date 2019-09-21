@@ -43,7 +43,6 @@
   dconf:
     key: "/org/gnome/shell/enabled-extensions"
     value:
-      - gnome-shell-trash-extension
       - openweather-extension@jenslody.de
       - user-theme@gnome-shell-extensions.gcampax.github.com
       - dash-to-dock@micxgx.gmail.com
