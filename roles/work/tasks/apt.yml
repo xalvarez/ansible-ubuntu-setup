@@ -11,3 +11,5 @@
     - python3.7-dev
     - python3-pip
     - jq
+    - cifs-utils
+    - keyutils
