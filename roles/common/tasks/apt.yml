@@ -1,12 +1,17 @@
 ---
-- name: Add git official repository
+- name: Add official git repository
   apt_repository:
     repo: ppa:git-core/ppa
+
+- name: Add official flatpak respository
+  apt_repository:
+    repo: ppa:alexlarsson/flatpak
 
 - name: Install apt packages
   apt:
     name: "{{ packages }}"
     force_apt_get: yes
+    state: latest
   vars:
     packages:
     - chromium-browser
@@ -14,6 +19,7 @@
     - default-jdk
     - default-jdk-doc
     - flatpak
+    - gnome-software-plugin-flatpak
     - git
     - httpie
     - keepassxc

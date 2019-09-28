@@ -3,6 +3,7 @@
   apt:
     name: "{{ packages }}"
     force_apt_get: yes
+    state: latest
   vars:
     packages:
     - chrome-gnome-shell
