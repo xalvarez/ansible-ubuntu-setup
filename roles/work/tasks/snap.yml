@@ -11,5 +11,6 @@
   snap:
     name:
       - teams-for-linux
+      - yq
 
 - import_tasks: teams.yml
