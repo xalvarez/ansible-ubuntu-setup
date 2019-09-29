@@ -9,4 +9,5 @@
 - import_tasks: aws_vault.yml
   become: no
 
+- import_tasks: aws_session_manager_plugin.yml
 - import_tasks: payara.yml
