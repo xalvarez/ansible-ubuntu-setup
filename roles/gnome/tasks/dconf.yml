@@ -39,6 +39,21 @@
     key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size"
     value: "34"
 
+- name: Use static workspaces
+  dconf:
+    key: "/org/gnome/mutter/dynamic-workspaces"
+    value: "false"
+
+- name: Use exactly 4 workspaces
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/num-workspaces"
+    value: "4"
+
+- name: Use workspaces on all monitors
+  dconf:
+    key: "/org/gnome/mutter/workspaces-only-on-primary"
+    value: "false"
+
 - name: Enable gnome-shell extensions (available after restarting)
   dconf:
     key: "/org/gnome/shell/enabled-extensions"
