@@ -54,6 +54,61 @@
     key: "/org/gnome/mutter/workspaces-only-on-primary"
     value: "false"
 
+- name: Set 'move to workspace 1' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-1"
+    value: "['<Shift><Super>F1']"
+
+- name: Set 'move to workspace 2' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-2"
+    value: "['<Shift><Super>F2']"
+
+- name: Set 'move to workspace 3' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-3"
+    value: "['<Shift><Super>F3']"
+
+- name: Set 'move to workspace 4' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-4"
+    value: "['<Shift><Super>F4']"
+
+- name: Set 'switch to workspace 1' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-1"
+    value: "['<Super>F1']"
+
+- name: Set 'switch to workspace 2' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2"
+    value: "['<Super>F2']"
+
+- name: Set 'switch to workspace 3' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-3"
+    value: "['<Super>F3']"
+
+- name: Set 'switch to workspace 4' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-4"
+    value: "['<Super>F4']"
+
+- name: Disable 'window resizing' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/begin-resize"
+    value: "@as []"
+
+- name: Disable 'switch to workspace left' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-left"
+    value: "@as []"
+
+- name: Disable 'switch to workspace right' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-right"
+    value: "@as []"
+
 - name: Enable gnome-shell extensions (available after restarting)
   dconf:
     key: "/org/gnome/shell/enabled-extensions"
