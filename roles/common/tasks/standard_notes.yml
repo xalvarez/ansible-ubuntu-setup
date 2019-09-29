@@ -1,0 +1,6 @@
+---
+- name: Download Standard Notes
+  get_url:
+    url: https://github.com/standardnotes/desktop/releases/download/v{{ standard_notes.version }}/standard-notes-{{ standard_notes.version }}-x86_64.AppImage
+    dest: ~/.local/bin/standard-notes
+    mode: u+x

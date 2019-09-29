@@ -1,2 +1,5 @@
 terminator:
   config: https://gist.githubusercontent.com/xalvarez/cdb6d9358e9822a4c952e461c50d28a4/raw/config
+
+standard_notes:
+  version: 3.0.15
