@@ -9,7 +9,7 @@ want to fork the project and change it however you like.
 
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) >= 2.8.0 is
 required to execute the playbook. You can install it by executing
-[install_ansible.sh](https://github.com/xavieralvarezjuste4260/jellyfish_ansible-ubuntu-setup/blob/master/install_ansible.sh):
+[install_ansible.sh](install_ansible.sh):
 
 ```
 ./install_ansible.sh
