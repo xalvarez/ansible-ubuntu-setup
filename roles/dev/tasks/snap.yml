@@ -4,7 +4,6 @@
     name: "{{ item }}"
     classic: yes
   with_items:
-      - aws-cli
       - code
       - hub
 
