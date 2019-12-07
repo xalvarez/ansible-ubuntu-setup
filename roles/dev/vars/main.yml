@@ -2,7 +2,7 @@ visual_studio_code:
   config: https://gist.githubusercontent.com/xalvarez/f6abc34fb56f766820db3a3cb1287a4a/raw/settings.json
 
 jetbrains_toolbox:
-  version: 1.15.5796
+  version: 1.16.6067
 
 docker_compose:
-  version: 1.24.1
+  version: 1.25.0
