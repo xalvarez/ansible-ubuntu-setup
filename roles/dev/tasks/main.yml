@@ -1,6 +1,5 @@
 ---
 - import_tasks: snap.yml
-- import_tasks: flatpak.yml
 
 - import_tasks: jetbrains_toolbox.yml
   become: no
