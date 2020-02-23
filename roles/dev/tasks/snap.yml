@@ -3,7 +3,7 @@
   snap:
     name: "{{ item }}"
     classic: yes
-  with_items:
+  loop:
       - code
       - hub
 

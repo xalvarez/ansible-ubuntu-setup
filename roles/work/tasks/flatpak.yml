@@ -7,7 +7,7 @@
 - name: Install flatpak packages
   flatpak:
     name: "{{ item }}"
-  with_items:
+  loop:
     - org.remmina.Remmina
     - us.zoom.Zoom
   become: no

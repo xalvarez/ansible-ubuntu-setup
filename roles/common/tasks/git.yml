@@ -4,7 +4,7 @@
     name: "{{ item.name }}"
     value: "{{ item.value }}"
     scope: global
-  with_items:
+  loop:
     - { name: "color.ui", value: "auto" }
     - { name: "fetch.prune", value: "true" }
     - { name: "alias.co", value: "checkout" }
