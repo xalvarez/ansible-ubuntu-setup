@@ -1,5 +1,11 @@
 ---
 - hosts: all
+  pre_tasks:
+  - name: Verify Ansible version
+    assert:
+      that: "ansible_version.full is version_compare('2.9', '>=')"
+      fail_msg: This Ansible playbook requires Ansible version >= 2.9.1. Current version is {{ ansible_version.full }}
+      quiet: yes
   tasks:
     - name: Enable third-party sources
       lineinfile:
