@@ -5,7 +5,6 @@
     force_apt_get: yes
   vars:
     packages:
-    - maven
     - openvpn
     - python3.7
     - python3.7-dev
