@@ -5,9 +5,6 @@
     line: PATH="$HOME/.local/bin:$PATH"
   become: no
 
-- import_tasks: standard_notes.yml
-  become: no
-
 - import_tasks: apt.yml
 - import_tasks: snap.yml
 - import_tasks: flatpak.yml
