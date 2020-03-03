@@ -4,7 +4,7 @@
 
 - name: Add Node.js apt repository
   apt_repository:
-    repo: deb https://deb.nodesource.com/node_10.x bionic main
+    repo: deb https://deb.nodesource.com/node_12.x bionic main
 
 - name: Install Node.js
   apt:
