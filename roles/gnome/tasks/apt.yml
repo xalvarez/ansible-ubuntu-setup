@@ -11,3 +11,4 @@
     - gnome-shell-extension-weather
     - gnome-shell-extensions
     - gnome-tweaks
+    - python3-psutil
