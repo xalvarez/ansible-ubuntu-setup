@@ -1,8 +1,4 @@
 ---
-- name: Add official KeePassXC respository
-  apt_repository:
-    repo: ppa:phoerious/keepassxc
-
 - name: Install apt packages
   apt:
     name: "{{ packages }}"
