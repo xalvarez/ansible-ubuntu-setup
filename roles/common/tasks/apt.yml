@@ -1,8 +1,4 @@
 ---
-- name: Add official flatpak respository
-  apt_repository:
-    repo: ppa:alexlarsson/flatpak
-
 - name: Add official KeePassXC respository
   apt_repository:
     repo: ppa:phoerious/keepassxc
