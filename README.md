@@ -3,7 +3,8 @@
 This repository contains an Ansible playbook whose aim is to save time setting up Ubuntu machines.
 
 The script is adapted to my own needs and preferences, so if you like the idea you might
-want to fork the project and change it however you like.
+want to fork the project and change it however you like. Bear in mind that it is only guaranteed to
+work on **Ubuntu 20.04** and it may not work on other versions.
 
 ## Requirements
 
