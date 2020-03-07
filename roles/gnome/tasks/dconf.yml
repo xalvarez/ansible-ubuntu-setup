@@ -115,7 +115,6 @@
     value:
       - openweather-extension@jenslody.de
       - user-theme@gnome-shell-extensions.gcampax.github.com
-      - dash-to-dock@micxgx.gmail.com
 
 - import_tasks: dash_to_dock.yml
   become: no
