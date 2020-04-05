@@ -7,16 +7,18 @@
     packages:
     - chromium-browser
     - curl
-    - default-jdk
-    - default-jdk-doc
+    - openjdk-8-jdk
+    - openjdk-8-doc
+    - openjdk-11-jdk
+    - openjdk-11-doc
+    - openjdk-14-jdk
+    - openjdk-14-doc
     - flatpak
     - fzf
     - gnome-software-plugin-flatpak
     - git
     - httpie
     - keepassxc
-    - openjdk-8-jdk
-    - openjdk-8-doc
     - tldr
     - ubuntu-restricted-extras
     - synaptic
