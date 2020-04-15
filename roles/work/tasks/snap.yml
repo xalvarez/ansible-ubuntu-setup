@@ -6,11 +6,3 @@
   loop:
       - aws-cli
       - go
-
-- name: Install non-classic snaps
-  snap:
-    name:
-      - teams-for-linux
-      - yq
-
-- import_tasks: teams.yml
