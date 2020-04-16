@@ -4,5 +4,4 @@
     name: "{{ item }}"
     classic: yes
   loop:
-      - aws-cli
       - go
