@@ -19,3 +19,8 @@
 - name: Install Teams
   apt:
     deb: https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_{{ teams.version }}_amd64.deb
+
+- name: Install aws-cli
+  pip:
+    executable: /usr/bin/pip3
+    name: awscli
