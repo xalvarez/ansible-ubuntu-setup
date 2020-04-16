@@ -12,5 +12,8 @@
 - import_tasks: saml2aws.yml
   become: no
 
+- import_tasks: aws_nuke.yml
+  become: no
+
 - import_tasks: aws_session_manager_plugin.yml
 - import_tasks: payara.yml
