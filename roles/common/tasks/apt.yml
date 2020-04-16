@@ -1,4 +1,8 @@
 ---
+- name: Add official git repository
+  apt_repository:
+    repo: ppa:git-core/ppa
+
 - name: Install apt packages
   apt:
     name: "{{ packages }}"
