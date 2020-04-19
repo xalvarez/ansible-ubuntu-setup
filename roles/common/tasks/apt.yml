@@ -3,10 +3,6 @@
   apt_repository:
     repo: ppa:git-core/ppa
 
-- name: Add official flatpak respository
-  apt_repository:
-    repo: ppa:alexlarsson/flatpak
-
 - name: Add official KeePassXC respository
   apt_repository:
     repo: ppa:phoerious/keepassxc
@@ -19,15 +15,16 @@
     packages:
     - chromium-browser
     - curl
-    - default-jdk
-    - default-jdk-doc
+    - openjdk-8-jdk
+    - openjdk-8-doc
+    - openjdk-11-jdk
+    - openjdk-11-doc
     - flatpak
+    - fzf
     - gnome-software-plugin-flatpak
     - git
     - httpie
     - keepassxc
-    - openjdk-8-jdk
-    - openjdk-8-doc
     - tldr
     - ubuntu-restricted-extras
     - synaptic
