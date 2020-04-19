@@ -9,4 +9,5 @@
     name: "{{ item }}"
   loop:
     - org.remmina.Remmina
+    - us.zoom.Zoom
   become: no
