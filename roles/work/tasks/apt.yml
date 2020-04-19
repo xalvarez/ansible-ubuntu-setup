@@ -16,7 +16,6 @@
   apt:
     deb: https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_{{ teams.version }}_amd64.deb
 
-- name: Install aws-cli
-  pip:
-    executable: /usr/bin/pip3
-    name: awscli
+- name: Install gopass
+  apt:
+    deb: https://github.com/gopasspw/gopass/releases/download/v{{ gopass.version }}/gopass-{{ gopass.version }}-linux-amd64.deb

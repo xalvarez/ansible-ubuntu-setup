@@ -4,6 +4,9 @@ aws_nuke:
 aws_vault:
   version: 4.7.1
 
+gopass:
+  version: 1.8.6
+
 payara:
   version: 5.193.1
 
