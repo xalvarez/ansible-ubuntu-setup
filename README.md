@@ -16,7 +16,7 @@ required to execute the playbook. You can install it by executing
 ./install_ansible.sh
 ```
 
-Do note that this playbook has only been tested with Ubuntu 18.04 and Ansible 2.8.0.
+Do note that this playbook has only been tested with **Ubuntu 20.04**.
 
 ## Running the playbook
 
