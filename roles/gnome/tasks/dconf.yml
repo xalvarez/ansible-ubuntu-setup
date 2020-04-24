@@ -31,18 +31,8 @@
 
 - name: Show weekdays on calendar
   dconf:
-    key: "/org/gnome/desktop/calendar/show-weekdate"
+    key: "/org/gnome/desktop/interface/clock-show-weekday"
     value: "true"
-
-- name: Move dock to bottom
-  dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/dock-position"
-    value: "'BOTTOM'"
-
-- name: Set dock icons' size to 34
-  dconf:
-    key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size"
-    value: "34"
 
 - name: Use static workspaces
   dconf:
