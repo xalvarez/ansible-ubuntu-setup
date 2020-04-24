@@ -21,7 +21,6 @@
     - openjdk-11-doc
     - flatpak
     - fzf
-    - gnome-software-plugin-flatpak
     - git
     - httpie
     - keepassxc
