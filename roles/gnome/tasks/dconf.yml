@@ -1,4 +1,9 @@
 ---
+- name: Show battery percentage
+  dconf:
+    key: "/org/gnome/desktop/interface/show-battery-percentage"
+    value: "true"
+
 - name: Disable automatic blank screen
   dconf:
     key: "/org/gnome/desktop/session/idle-delay"
