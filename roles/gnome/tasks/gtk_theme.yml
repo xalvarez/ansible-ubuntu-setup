@@ -1,0 +1,10 @@
+---
+- name: Use gtk theme 'Yaru-dark'
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Yaru-dark'"
+
+- name: Use gnome shell theme 'Yaru-dark'
+  dconf:
+    key: "/org/gnome/shell/extensions/user-theme/name"
+    value: "'Yaru-dark'"
