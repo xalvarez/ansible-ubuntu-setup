@@ -115,6 +115,9 @@
     value:
       - openweather-extension@jenslody.de
       - user-theme@gnome-shell-extensions.gcampax.github.com
+      - desktop-icons@csoriano
+      - ubuntu-appindicators@ubuntu.com
+      - ubuntu-dock@ubuntu.com
 
 - import_tasks: dash_to_dock.yml
   become: no
