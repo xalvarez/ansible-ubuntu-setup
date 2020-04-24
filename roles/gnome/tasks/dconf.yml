@@ -4,6 +4,11 @@
     key: "/org/gnome/desktop/interface/show-battery-percentage"
     value: "true"
 
+- name: Enable night light
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
+    value: "true"
+
 - name: Disable automatic blank screen
   dconf:
     key: "/org/gnome/desktop/session/idle-delay"
