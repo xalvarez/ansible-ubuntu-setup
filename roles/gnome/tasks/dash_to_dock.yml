@@ -1,4 +1,14 @@
 ---
+- name: Move dock to bottom
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/dock-position"
+    value: "'BOTTOM'"
+
+- name: Set dock icons' size to 34
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size"
+    value: "34"
+
 - name: Show 'Dash to Dock' dock in all monitors (available after restarting)
   dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/multi-monitor"
