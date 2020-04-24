@@ -119,6 +119,11 @@
       - ubuntu-appindicators@ubuntu.com
       - ubuntu-dock@ubuntu.com
 
+- name: Set up theme
+  import_tasks: gtk_theme.yml
+  become: no
+
+
 - import_tasks: dash_to_dock.yml
   become: no
 
