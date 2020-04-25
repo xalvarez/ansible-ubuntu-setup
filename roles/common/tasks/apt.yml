@@ -1,8 +1,4 @@
 ---
-- name: Add official git repository
-  apt_repository:
-    repo: ppa:git-core/ppa
-
 - name: Add official KeePassXC respository
   apt_repository:
     repo: ppa:phoerious/keepassxc
