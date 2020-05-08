@@ -1,0 +1,13 @@
+---
+- name: Add Teams signing key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add Teams apt repository
+  apt_repository:
+    repo: deb https://packages.microsoft.com/repos/ms-teams stable main
+
+- name: Install Teams
+  apt:
+    name: teams
+    force_apt_get: yes

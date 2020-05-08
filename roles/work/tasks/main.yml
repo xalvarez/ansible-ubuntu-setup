@@ -10,3 +10,4 @@
   import_tasks: aws.yml
 
 - import_tasks: payara.yml
+- import_tasks: teams.yml
