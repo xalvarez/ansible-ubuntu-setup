@@ -1,0 +1,27 @@
+---
+- name: Install docker.io
+  apt:
+    name: docker.io
+    force_apt_get: yes
+
+- name: Create docker group
+  group:
+    name: docker
+
+- name: Allow running Docker without sudo
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
+
+- name: Download Docker Compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/{{ docker_compose.version }}/docker-compose-Linux-x86_64
+    dest: ~/.local/bin/docker-compose
+    mode: u+x
+  become: no
+
+- name: Enable Docker Compose autocompletion
+  get_url:
+    url: https://raw.githubusercontent.com/docker/compose/{{ docker_compose.version }}/contrib/completion/bash/docker-compose
+    dest: /etc/bash_completion.d/docker-compose
