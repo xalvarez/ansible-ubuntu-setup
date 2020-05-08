@@ -1,0 +1,13 @@
+---
+- name: Install JDK's 8, 11 and 14
+  apt:
+    name: "{{ packages }}"
+    force_apt_get: yes
+  vars:
+    packages:
+    - openjdk-8-jdk
+    - openjdk-8-doc
+    - openjdk-11-jdk
+    - openjdk-11-doc
+    - openjdk-14-jdk
+    - openjdk-14-doc
