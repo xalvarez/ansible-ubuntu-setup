@@ -8,3 +8,5 @@
 
 - import_tasks: bash_git_prompt.yml
   become: no
+
+- import_tasks: docker.yml
