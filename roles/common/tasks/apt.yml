@@ -11,10 +11,6 @@
     packages:
     - chromium-browser
     - curl
-    - openjdk-8-jdk
-    - openjdk-8-doc
-    - openjdk-11-jdk
-    - openjdk-11-doc
     - flatpak
     - fzf
     - git
@@ -22,11 +18,8 @@
     - keepassxc
     - tldr
     - ubuntu-restricted-extras
-    - synaptic
     - terminator
     - vim
-    - libcanberra-gtk-module
-    - libcanberra-gtk3-module
 
 - import_tasks: terminator.yml
   become: no
