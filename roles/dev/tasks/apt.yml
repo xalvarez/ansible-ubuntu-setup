@@ -6,9 +6,3 @@
   vars:
     packages:
     - ansible-lint
-    - openjdk-8-jdk
-    - openjdk-8-doc
-    - openjdk-11-jdk
-    - openjdk-11-doc
-    - openjdk-14-jdk
-    - openjdk-14-doc

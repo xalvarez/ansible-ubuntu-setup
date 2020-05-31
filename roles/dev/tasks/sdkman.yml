@@ -1,6 +1,12 @@
 ---
+- name: Download SDKMAN! installation script
+  get_url:
+    url: https://get.sdkman.io
+    dest: /tmp/install_sdkman.sh
+    mode: u+x
+
 - name: Install SDKMAN!
-  shell: "curl -s https://get.sdkman.io | bash"
+  command: /tmp/install_sdkman.sh
 
 - name: Install JDK 14
   shell: ". ~/.sdkman/bin/sdkman-init.sh && sdk install 14.0.1.j9-adpt"
