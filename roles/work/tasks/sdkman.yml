@@ -8,6 +8,13 @@
 - name: Install SDKMAN!
   command: /tmp/install_sdkman.sh
 
+- name: Use local SDKMAN! configurations by default
+  lineinfile:
+    path: ~/.sdkman/etc/config
+    regexp: (sdkman_auto_env=)false
+    line: '\1true'
+    backrefs: yes
+
 - name: Install JDK 8 ({{ sdkman.adoptopenjdk_8.version }})
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java {{ sdkman.adoptopenjdk_8.version }}
   args:
