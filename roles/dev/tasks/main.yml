@@ -1,5 +1,5 @@
 ---
-- import_tasks: asdf.yml
+- import_tasks: sdkman.yml
   become: no
 
 - import_tasks: apt.yml

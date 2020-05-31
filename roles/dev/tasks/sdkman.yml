@@ -1,0 +1,6 @@
+---
+- name: Install SDKMAN!
+  shell: "curl -s https://get.sdkman.io | bash"
+
+- name: Install JDK 14
+  shell: ". .sdkman/bin/sdkman-init.sh && sdk install 14.0.1.j9-adpt"
