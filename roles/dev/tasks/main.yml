@@ -1,8 +1,9 @@
 ---
+- import_tasks: apt.yml
+
 - import_tasks: sdkman.yml
   become: no
 
-- import_tasks: apt.yml
 - import_tasks: snap.yml
 
 - import_tasks: jetbrains_toolbox.yml
