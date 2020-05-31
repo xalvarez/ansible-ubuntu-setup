@@ -7,7 +7,7 @@
 
 - name: Add asdft config to .bashrc
   blockinfile:
-  path: ~/.bashrc
-  block: |
-    . $HOME/.asdf/asdf.sh
-    . $HOME/.asdf/completions/asdf.bash
+    path: ~/.bashrc
+    block: |
+      . ~/.asdf/asdf.sh
+      . ~/.asdf/completions/asdf.bash

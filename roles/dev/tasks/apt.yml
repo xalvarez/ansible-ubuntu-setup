@@ -1,10 +1,11 @@
 ---
-- name: Install JDK's 8, 11 and 14
+- name: Install apt packages
   apt:
     name: "{{ packages }}"
     force_apt_get: yes
   vars:
     packages:
+    - ansible-lint
     - openjdk-8-jdk
     - openjdk-8-doc
     - openjdk-11-jdk

@@ -18,19 +18,24 @@
         update_cache: yes
         upgrade: safe
         force_apt_get: yes
-    - import_role:
+    - name: Execute role 'common'
+      import_role:
         name: common
       tags: ['common']
-    - import_role:
+    - name: Execute role 'gnome'
+      import_role:
         name: gnome
       tags: ['gnome']
-    - import_role:
+    - name: Execute role 'dev'
+      import_role:
         name: dev
       tags: ['dev']
-    - import_role:
+    - name: Execute role 'entertainment'
+      import_role:
         name: entertainment
       tags: ['entertainment']
-    - import_role:
+    - name: Execute role 'work'
+      import_role:
         name: work
       tags: ['work']
     - name: Remove useless apt packages and dependencies
