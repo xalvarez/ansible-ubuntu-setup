@@ -5,9 +5,10 @@
     dest: ~/.asdf
     version: v{{ asdf.version }}
 
-- name: Add asdft config to .bashrc
+- name: Add asdf config to .bashrc
   blockinfile:
     path: ~/.bashrc
+    marker: "# {mark} ANSIBLE MANAGED BLOCK (asdf)"
     block: |
       . ~/.asdf/asdf.sh
       . ~/.asdf/completions/asdf.bash
