@@ -1,0 +1,13 @@
+---
+- name: Download asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: v{{ asdf.version }}
+
+- name: Add asdft config to .bashrc
+  blockinfile:
+  path: ~/.bashrc
+  block: |
+    . $HOME/.asdf/asdf.sh
+    . $HOME/.asdf/completions/asdf.bash

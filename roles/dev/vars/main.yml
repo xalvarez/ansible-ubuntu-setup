@@ -1,3 +1,6 @@
+asdf:
+  version: 0.7.8
+
 visual_studio_code:
   config: https://gist.githubusercontent.com/xalvarez/f6abc34fb56f766820db3a3cb1287a4a/raw/settings.json
 
