@@ -8,7 +8,17 @@
 - name: Install SDKMAN!
   command: /tmp/install_sdkman.sh
 
-- name: Install JDK 14
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java 14.0.1.j9-adpt
+- name: Install JDK 14 ({{ sdkman.adoptopenjdk_14.version }})
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java {{ sdkman.adoptopenjdk_14.version }}
+  args:
+    executable: /bin/bash
+
+- name: Install JDK 13 ({{ sdkman.adoptopenjdk_13.version }})
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java {{ sdkman.adoptopenjdk_13.version }}
+  args:
+    executable: /bin/bash
+
+- name: Set up default JDK to 13 ({{ sdkman.adoptopenjdk_13.version }})
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk use java {{ sdkman.adoptopenjdk_13.version }}
   args:
     executable: /bin/bash

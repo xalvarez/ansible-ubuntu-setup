@@ -5,6 +5,7 @@
     force_apt_get: yes
   vars:
     packages:
+    - curl
     - openvpn
     - python3-dev
     - python3-pip

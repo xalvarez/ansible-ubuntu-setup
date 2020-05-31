@@ -1,5 +1,12 @@
-asdf:
-  version: 0.7.8
+sdkman:
+  adoptopenjdk_14:
+    version: 14.0.1.j9-adpt
+  adoptopenjdk_13:
+    version: 13.0.2.j9-adpt
+  adoptopenjdk_11:
+    version: 11.0.7.j9-adpt
+  adoptopenjdk_8:
+    version: 8.0.252.j9-adpt
 
 visual_studio_code:
   config: https://gist.githubusercontent.com/xalvarez/f6abc34fb56f766820db3a3cb1287a4a/raw/settings.json
