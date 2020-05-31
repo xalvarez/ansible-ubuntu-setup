@@ -4,9 +4,6 @@
     executable: /usr/bin/pip3
     name: awscli
 
-- import_tasks: aws_vault.yml
-  become: no
-
 - import_tasks: saml2aws.yml
   become: no
 
