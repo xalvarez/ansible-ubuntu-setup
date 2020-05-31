@@ -13,18 +13,14 @@
   args:
     executable: /bin/bash
   register: result
-  failed_when:
-    - result.rc != 0
-    - '"is not available" in result.stdout'
+  changed_when: result.rc == 0 or "is already installed" in result.stdout'
 
 - name: Install JDK 11 ({{ sdkman.adoptopenjdk_11.version }})
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java {{ sdkman.adoptopenjdk_11.version }}
   args:
     executable: /bin/bash
   register: result
-  failed_when:
-    - result.rc != 0
-    - '"is not available" in result.stdout'
+  changed_when: result.rc == 0 or "is already installed" in result.stdout'
 
 - name: Set up default JDK to 11 ({{ sdkman.adoptopenjdk_11.version }})
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk use java {{ sdkman.adoptopenjdk_11.version }}
