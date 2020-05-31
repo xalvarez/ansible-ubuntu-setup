@@ -9,6 +9,6 @@
   command: /tmp/install_sdkman.sh
 
 - name: Install JDK 14
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install 14.0.1.j9-adpt
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java 14.0.1.j9-adpt
   args:
     executable: /bin/bash
