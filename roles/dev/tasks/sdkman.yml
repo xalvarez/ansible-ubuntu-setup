@@ -27,6 +27,6 @@
     - '"is already installed" not in result.stdout'
 
 - name: Set up default JDK to 13 ({{ sdkman.adoptopenjdk_13.version }})
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk use java {{ sdkman.adoptopenjdk_13.version }}
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk default java {{ sdkman.adoptopenjdk_13.version }}
   args:
     executable: /bin/bash
