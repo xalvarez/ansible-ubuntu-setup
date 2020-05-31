@@ -6,3 +6,4 @@
   vars:
     packages:
     - ansible-lint
+    - curl
