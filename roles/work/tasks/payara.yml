@@ -3,6 +3,7 @@
   get_url:
     url: https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/{{ payara.version }}/payara-{{ payara.version }}.zip
     dest: /tmp/payara5.zip
+  become: no
 
 - name: Unarchive Payara {{ payara.version }}
   unarchive:

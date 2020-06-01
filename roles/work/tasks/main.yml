@@ -1,13 +1,27 @@
 ---
-- import_tasks: apt.yml
 - import_tasks: snap.yml
-- import_tasks: flatpak.yml
+- import_tasks: apt.yml
+
+- name: Check if terraform {{ terraform11.version }} is already installed
+  stat:
+    path: ~/.local/bin/terraform
+  register: terraform11
+  become: no
+
+- name: Check if terraform {{ terraform12.version }} is already installed
+  stat:
+    path: ~/.local/bin/terraform12
+  register: terraform12
+  become: no
 
 - import_tasks: terraform.yml
   become: no
+  when: not terraform11.stat.exists or not terraform12.stat.exists
 
-- name: Set up aws tools
-  import_tasks: aws.yml
+- import_tasks: sdkman.yml
+  become: no
 
 - import_tasks: payara.yml
+- import_tasks: flatpak.yml
+- import_tasks: aws.yml
 - import_tasks: teams.yml
