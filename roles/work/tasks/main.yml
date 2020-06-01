@@ -1,22 +1,24 @@
 ---
-- import_tasks: apt.yml
-
-- import_tasks: sdkman.yml
-  become: no
-
 - import_tasks: snap.yml
   async: 600
   poll: 0
-
-- import_tasks: flatpak.yml
 
 - import_tasks: terraform.yml
   become: no
   async: 600
   poll: 0
 
-- name: Set up aws tools
-  import_tasks: aws.yml
+- import_tasks: sdkman.yml
+  become: no
+  async: 600
+  poll: 0
 
 - import_tasks: payara.yml
+  become: no
+  async: 600
+  poll: 0
+
+- import_tasks: apt.yml
+- import_tasks: flatpak.yml
+- import_tasks: aws.yml
 - import_tasks: teams.yml

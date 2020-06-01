@@ -1,10 +1,10 @@
 ---
-- import_tasks: apt.yml
+- import_tasks: snap.yml
+  async: 600
+  poll: 0
 
 - import_tasks: sdkman.yml
   become: no
-
-- import_tasks: snap.yml
   async: 600
   poll: 0
 
@@ -17,10 +17,14 @@
 - import_tasks: jetbrains_toolbox.yml
   become: no
   when: not toolbox.stat.exists
-
-- import_tasks: nodejs.yml
+  async: 600
+  poll: 0
 
 - import_tasks: bash_git_prompt.yml
   become: no
+  async: 600
+  poll: 0
 
+- import_tasks: apt.yml
+- import_tasks: nodejs.yml
 - import_tasks: docker.yml

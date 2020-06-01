@@ -14,4 +14,3 @@
     path: ~/.bashrc
     regexp: ^PATH=\".*\"$
     line: PATH="$HOME/.local/bin:$PATH:/opt/payara5/bin"
-  become: no
