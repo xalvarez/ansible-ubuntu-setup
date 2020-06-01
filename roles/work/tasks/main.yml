@@ -9,8 +9,6 @@
   become: no
 
 - import_tasks: payara.yml
-  become: no
-
 - import_tasks: flatpak.yml
 - import_tasks: aws.yml
 - import_tasks: teams.yml
