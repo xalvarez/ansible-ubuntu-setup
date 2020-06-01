@@ -10,6 +10,7 @@
   stat:
     path: ~/.local/bin/jetbrains-toolbox
   register: toolbox
+  become: no
 
 - import_tasks: jetbrains_toolbox.yml
   become: no
