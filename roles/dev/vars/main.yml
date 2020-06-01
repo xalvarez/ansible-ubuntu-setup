@@ -1,3 +1,9 @@
+adoptopenjdk14:
+  version: 14.0.1.j9-adpt
+
+adoptopenjdk13:
+  version: 13.0.2.j9-adpt
+
 docker_compose:
   version: 1.25.5
 

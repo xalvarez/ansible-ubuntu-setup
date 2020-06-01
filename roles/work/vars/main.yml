@@ -1,3 +1,6 @@
+adoptopenjdk8:
+  version: 8.0.252.j9-adpt
+
 aws_nuke:
   version: 2.14.0
 
