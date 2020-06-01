@@ -2,7 +2,7 @@
 - name: Check if SDKMAN! is already installed
   stat:
     path: ~/.sdkman
-  register: folder
+  register: sdkman
 
 - name: Download SDKMAN! installation script
   get_url:
@@ -10,11 +10,11 @@
     dest: /tmp/install_sdkman.sh
     mode: u+x
   register: download
-  when: not folder.stat.exists
+  when: not sdkman.stat.exists
 
 - name: Install SDKMAN!
   command: /tmp/install_sdkman.sh
-  when: not folder.stat.exists
+  when: not sdkman.stat.exists
 
 - name: Install micronaut {{ sdkman.micronaut.version }}
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install micronaut {{ sdkman.micronaut.version }}
