@@ -10,11 +10,10 @@
     dest: /tmp/install_sdkman.sh
     mode: u+x
   register: download
-  when: folder.stat.exists == False
-
+  when: not folder.stat.exists
 - name: Install SDKMAN!
   command: /tmp/install_sdkman.sh
-  when: folder.stat.exists == False
+  when: not folder.stat.exists
 
 - name: Install micronaut {{ sdkman.micronaut.version }}
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install micronaut {{ sdkman.micronaut.version }}
@@ -24,3 +23,4 @@
   failed_when:
     - installation.rc != 0
     - '"is already installed" not in result.stdout'
+  changed_when: installation.rc == 0
