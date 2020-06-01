@@ -12,8 +12,6 @@
     - jq
     - cifs-utils
     - keyutils
-    - openjdk-11-jdk
-    - openjdk-11-doc
     - openjdk-8-jdk
     - openjdk-8-doc
 
