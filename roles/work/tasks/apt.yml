@@ -5,13 +5,18 @@
     force_apt_get: yes
   vars:
     packages:
+    - curl
     - openvpn
     - python3-dev
     - python3-pip
     - jq
     - cifs-utils
     - keyutils
+    - openjdk-11-jdk
+    - openjdk-11-doc
+    - openjdk-8-jdk
+    - openjdk-8-doc
 
 - name: Install gopass
   apt:
-    deb: https://github.com/gopasspw/gopass/releases/download/v{{ gopass.version }}/gopass-{{ gopass.version }}-linux-amd64.deb
+    deb: https://github.com/gopasspw/gopass/releases/download/v{{ gopass.version }}/gopass_{{ gopass.version }}_linux_amd64.deb

@@ -1,9 +1,19 @@
 ---
 - import_tasks: apt.yml
+
+- import_tasks: sdkman.yml
+  become: no
+
 - import_tasks: snap.yml
+
+- name: Check if Jetbrains Toolbox is already installed
+  stat:
+    path: ~/.local/bin/jetbrains-toolbox
+  register: toolbox
 
 - import_tasks: jetbrains_toolbox.yml
   become: no
+  when: not toolbox.stat.exists
 
 - import_tasks: nodejs.yml
 
