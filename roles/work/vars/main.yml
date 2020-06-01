@@ -2,7 +2,7 @@ aws_nuke:
   version: 2.14.0
 
 gopass:
-  version: 1.9.0
+  version: 1.9.2
 
 payara:
   version: 5.193.1
