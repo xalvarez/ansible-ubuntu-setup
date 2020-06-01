@@ -16,8 +16,8 @@
   command: /tmp/install_sdkman.sh
   when: not sdkman.stat.exists
 
-- name: Install micronaut {{ sdkman.micronaut.version }}
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install micronaut {{ sdkman.micronaut.version }}
+- name: Install micronaut {{ micronaut.version }}
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install micronaut {{ micronaut.version }}
   args:
     executable: /bin/bash
   register: installation
