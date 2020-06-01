@@ -16,7 +16,7 @@
 
 - import_tasks: terraform.yml
   become: no
-  when: not terraform11.exists or not terraform12.exists
+  when: not terraform11.stat.exists or not terraform12.stat.exists
 
 - import_tasks: sdkman.yml
   become: no
