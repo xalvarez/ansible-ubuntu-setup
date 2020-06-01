@@ -7,3 +7,7 @@
     packages:
     - ansible-lint
     - curl
+    - openjdk-14-jdk
+    - openjdk-14-doc
+    - openjdk-13-jdk
+    - openjdk-13-doc

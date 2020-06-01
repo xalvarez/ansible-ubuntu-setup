@@ -8,25 +8,11 @@
 - name: Install SDKMAN!
   command: /tmp/install_sdkman.sh
 
-- name: Install JDK 14 ({{ sdkman.adoptopenjdk_14.version }})
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java {{ sdkman.adoptopenjdk_14.version }}
+- name: Install micronaut {{ sdkman.micronaut.version }}
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install micronaut {{ sdkman.micronaut.version }}
   args:
     executable: /bin/bash
   register: result
   failed_when:
     - result.rc != 0
     - '"is already installed" not in result.stdout'
-
-- name: Install JDK 13 ({{ sdkman.adoptopenjdk_13.version }})
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java {{ sdkman.adoptopenjdk_13.version }}
-  args:
-    executable: /bin/bash
-  register: result
-  failed_when:
-    - result.rc != 0
-    - '"is already installed" not in result.stdout'
-
-- name: Set up default JDK to 13 ({{ sdkman.adoptopenjdk_13.version }})
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk default java {{ sdkman.adoptopenjdk_13.version }}
-  args:
-    executable: /bin/bash

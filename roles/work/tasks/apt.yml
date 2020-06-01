@@ -12,6 +12,10 @@
     - jq
     - cifs-utils
     - keyutils
+    - openjdk-8-jdk
+    - openjdk-8-doc
+    - openjdk-11-jdk
+    - openjdk-11-doc
 
 - name: Install gopass
   apt:
