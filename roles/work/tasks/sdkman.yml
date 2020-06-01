@@ -23,7 +23,7 @@
   register: installation
   failed_when:
     - installation.rc != 0
-    - '"is already installed" not in result.stdout'
+    - '"is already installed" not in installation.stdout'
   changed_when: installation.rc == 0
   loop:
     - { name: 'micronaut', version: '{{ micronaut.version }}'}
@@ -34,3 +34,5 @@
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk default java {{ adoptopenjdk11.version }}
   args:
     executable: /bin/bash
+  register: default
+  changed_when: default.rc == 0
