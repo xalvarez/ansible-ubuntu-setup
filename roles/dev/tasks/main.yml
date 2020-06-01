@@ -5,6 +5,8 @@
   become: no
 
 - import_tasks: snap.yml
+  async: 600
+  poll: 0
 
 - name: Check if Jetbrains Toolbox is already installed
   stat:
