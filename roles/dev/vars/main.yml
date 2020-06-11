@@ -5,13 +5,13 @@ adoptopenjdk13:
   version: 13.0.2.j9-adpt
 
 docker_compose:
-  version: 1.25.5
+  version: 1.26.0
 
 jetbrains_toolbox:
   version: 1.17.7005
 
 micronaut:
-  version: 1.3.5
+  version: 1.3.6
 
 visual_studio_code:
   config: https://gist.githubusercontent.com/xalvarez/f6abc34fb56f766820db3a3cb1287a4a/raw/settings.json
