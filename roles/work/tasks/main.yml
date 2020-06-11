@@ -5,18 +5,18 @@
 - name: Check if terraform {{ terraform11.version }} is already installed
   stat:
     path: ~/.local/bin/terraform
-  register: terraform11
+  register: terraform_11
   become: no
 
 - name: Check if terraform {{ terraform12.version }} is already installed
   stat:
     path: ~/.local/bin/terraform12
-  register: terraform12
+  register: terraform_12
   become: no
 
 - import_tasks: terraform.yml
   become: no
-  when: not terraform11.stat.exists or not terraform12.stat.exists
+  when: not terraform_11.stat.exists or not terraform_12.stat.exists
 
 - import_tasks: sdkman.yml
   become: no
