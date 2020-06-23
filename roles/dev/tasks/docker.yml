@@ -14,6 +14,12 @@
     groups: docker
     append: yes
 
+- name: Enable Docker service
+  systemd:
+    name: docker
+    enabled: yes
+    masked: no
+
 - name: Download Docker Compose
   get_url:
     url: https://github.com/docker/compose/releases/download/{{ docker_compose.version }}/docker-compose-Linux-x86_64
