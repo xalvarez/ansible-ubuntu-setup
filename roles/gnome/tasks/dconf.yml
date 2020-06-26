@@ -39,6 +39,11 @@
     key: "/org/gnome/desktop/interface/clock-show-weekday"
     value: "true"
 
+- name: Show week number on calendar
+  dconf:
+    key: "/org/gnome/desktop/calendar/show-weekdate"
+    value: "true"
+
 - name: Use static workspaces
   dconf:
     key: "/org/gnome/mutter/dynamic-workspaces"
