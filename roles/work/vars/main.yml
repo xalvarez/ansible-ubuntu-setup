@@ -17,4 +17,4 @@ terraform11:
   version: 0.11.14
 
 terraform12:
-  version: 0.12.21
+  version: 0.12.26
