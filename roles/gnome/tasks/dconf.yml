@@ -114,6 +114,11 @@
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-right"
     value: "@as []"
 
+- name: Hide system monitor icon
+  dconf:
+    key: "/org/gnome/shell/extensions/system-monitor/icon-display"
+    value: "false"
+
 - name: Enable gnome-shell extensions (available after restarting)
   dconf:
     key: "/org/gnome/shell/enabled-extensions"
@@ -122,11 +127,11 @@
       - desktop-icons@csoriano
       - ubuntu-appindicators@ubuntu.com
       - ubuntu-dock@ubuntu.com
+      - system-monitor@paradoxxx.zero.gmail.com
 
 - name: Set up theme
   import_tasks: gtk_theme.yml
   become: no
-
 
 - import_tasks: dash_to_dock.yml
   become: no
