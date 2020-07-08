@@ -8,5 +8,6 @@
     - gnome-shell-extension-prefs
     - dconf-editor
     - gnome-shell-extensions
+    - gnome-shell-extension-system-monitor
     - gnome-tweaks
     - python3-psutil
