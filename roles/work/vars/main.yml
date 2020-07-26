@@ -1,17 +1,14 @@
 adoptopenjdk8:
-  version: 8.0.252.j9-adpt
+  version: 8.0.262.j9-adpt
 
 aws_nuke:
   version: 2.14.0
-
-gopass:
-  version: 1.9.2
 
 payara:
   version: 5.193.1
 
 saml2aws:
-  version: 2.26.1
+  version: 2.26.2
 
 terraform11:
   version: 0.11.14

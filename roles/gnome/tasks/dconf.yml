@@ -114,6 +114,26 @@
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-right"
     value: "@as []"
 
+- name: Set 'switch applications' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-applications"
+    value: "['<Alt>Tab']"
+
+- name: Set 'switch applications backward' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-applications-backward"
+    value: "['<Shift><Alt>Tab']"
+
+- name: Set 'switch windows' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-windows"
+    value: "['<Super>Tab']"
+
+- name: Set 'switch windows backward' keyboard shortcut
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-windows-backward"
+    value: "['<Shift><Super>Tab']"
+
 - name: Hide system monitor icon
   dconf:
     key: "/org/gnome/shell/extensions/system-monitor/icon-display"

@@ -13,7 +13,3 @@
     - jq
     - cifs-utils
     - keyutils
-
-- name: Install gopass
-  apt:
-    deb: https://github.com/gopasspw/gopass/releases/download/v{{ gopass.version }}/gopass_{{ gopass.version }}_linux_amd64.deb
