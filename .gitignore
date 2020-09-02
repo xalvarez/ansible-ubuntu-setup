@@ -1,1 +1,13 @@
+# Hidden files and folders
+.*
+!.gitignore
+!.github
+
+# IntelliJ IDEA
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Ansible
 *.retry
