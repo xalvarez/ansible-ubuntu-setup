@@ -20,3 +20,15 @@
 
 - import_tasks: nodejs.yml
 - import_tasks: docker.yml
+
+- name: Create gradle wrapper alias
+  lineinfile:
+    path: ~/.bashrc
+    line: "alias gw='./gradlew'"
+  become: no
+
+- name: Create alias for custom HTTPie theme
+  lineinfile:
+    path: ~/.bashrc
+    line: "alias http='http -s monokai'"
+  become: no
