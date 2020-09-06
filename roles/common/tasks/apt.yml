@@ -11,10 +11,10 @@
     packages:
     - chromium-browser
     - curl
+    - flashplugin-installer
     - flatpak
     - fzf
     - git
-    - httpie
     - keepassxc
     - tldr
     - ubuntu-restricted-extras

@@ -8,3 +8,9 @@
 - import_tasks: apt.yml
 - import_tasks: snap.yml
 - import_tasks: flatpak.yml
+
+- name: Create alias for updating everything
+  lineinfile:
+    path: ~/.bashrc
+    line: "alias uall='sudo apt update && sudo apt upgrade -y && sudo snap refresh && flatpak update -y'"
+  become: no
