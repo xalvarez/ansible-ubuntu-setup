@@ -1,0 +1,23 @@
+---
+- name: Remove temp. terraform file
+  file:
+    path: /tmp/terraform
+    state: absent
+
+- name: Download Terraform {{ terraform13.version }}
+  get_url:
+    url: https://releases.hashicorp.com/terraform/{{ terraform13.version }}/terraform_{{ terraform13.version }}_linux_amd64.zip
+    dest: /tmp/
+
+- name: Unarchive Terraform {{ terraform13.version }}
+  unarchive:
+    src: /tmp/terraform_{{ terraform13.version }}_linux_amd64.zip
+    dest: /tmp/
+    creates: /tmp/terraform
+    mode: u+x
+
+- name: Copy Terraform {{ terraform13.version }} into ~/.local/bin
+  copy:
+    src: /tmp/terraform
+    dest: ~/.local/bin/terraform13
+    mode: u+x
