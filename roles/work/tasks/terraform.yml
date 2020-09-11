@@ -1,30 +1,43 @@
 ---
-- name: Download Terraform {{ terraform12.version }}
-  get_url:
-    url: https://releases.hashicorp.com/terraform/{{ terraform12.version }}/terraform_{{ terraform12.version }}_linux_amd64.zip
-    dest: /tmp/
+- name: Check if terraform {{ terraform11.version }} is already installed
+  stat:
+    path: ~/.local/bin/terraform
+  register: terraform_11
+  become: no
 
-- name: Unarchive Terraform {{ terraform12.version }}
-  unarchive:
-    src: /tmp/terraform_{{ terraform12.version }}_linux_amd64.zip
-    dest: /tmp/
-    creates: /tmp/terraform
-    mode: u+x
+- name: Installing terraform {{ terraform11.version }}
+  import_tasks: terraform11.yml
+  become: no
+  when: not terraform_11.stat.exists
 
-- name: Copy Terraform {{ terraform12.version }} into ~/.local/bin
-  copy:
-    src: /tmp/terraform
-    dest: ~/.local/bin/terraform12
-    mode: u+x
+- name: Check if terraform {{ terraform12.version }} is already installed
+  stat:
+    path: ~/.local/bin/terraform12
+  register: terraform_12
+  become: no
 
-- name: Download Terraform {{ terraform11.version }}
-  get_url:
-    url: https://releases.hashicorp.com/terraform/{{ terraform11.version }}/terraform_{{ terraform11.version }}_linux_amd64.zip
-    dest: /tmp/
+- name: Installing terraform {{ terraform12.version }}
+  import_tasks: terraform12.yml
+  become: no
+  when: not terraform_12.stat.exists
 
-- name: Unarchive Terraform {{ terraform11.version }}
-  unarchive:
-    src: /tmp/terraform_{{ terraform11.version }}_linux_amd64.zip
-    dest: ~/.local/bin/
-    creates: ~/.local/bin/terraform
-    mode: u+x
+- name: Check if terraform {{ terraform13.version }} is already installed
+  stat:
+    path: ~/.local/bin/terraform13
+  register: terraform_13
+  become: no
+
+- name: Installing terraform {{ terraform13.version }}
+  import_tasks: terraform13.yml
+  become: no
+  when: not terraform_13.stat.exists
+
+- name: Create Terraform's plugin cache folder
+  file:
+    path: ~/.terraform.d/plugin-cache
+    state: directory
+
+- name: Set up Terraform's plugin caching
+  lineinfile:
+    path: ~/.bashrc
+    line: "export TF_PLUGIN_CACHE_DIR='~/.terraform.d/plugin-cache'"
