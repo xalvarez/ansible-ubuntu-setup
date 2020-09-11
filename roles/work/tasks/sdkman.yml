@@ -26,7 +26,6 @@
     - '"is already installed" not in installation.stdout'
   changed_when: installation.rc == 0
   loop:
-    - { name: 'micronaut', version: '{{ micronaut.version }}'}
     - { name: 'java', version: '{{ adoptopenjdk11.version }}'}
     - { name: 'java', version: '{{ adoptopenjdk8.version }}'}
 
