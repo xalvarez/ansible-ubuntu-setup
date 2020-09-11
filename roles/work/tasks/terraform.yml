@@ -1,4 +1,27 @@
 ---
+- name: Download Terraform {{ terraform13.version }}
+  get_url:
+    url: https://releases.hashicorp.com/terraform/{{ terraform13.version }}/terraform_{{ terraform13.version }}_linux_amd64.zip
+    dest: /tmp/
+
+- name: Unarchive Terraform {{ terraform13.version }}
+  unarchive:
+    src: /tmp/terraform_{{ terraform13.version }}_linux_amd64.zip
+    dest: /tmp/
+    creates: /tmp/terraform
+    mode: u+x
+
+- name: Copy Terraform {{ terraform13.version }} into ~/.local/bin
+  copy:
+    src: /tmp/terraform
+    dest: ~/.local/bin/terraform13
+    mode: u+x
+
+- name: Remove temp. terraform file
+  file:
+    path: /tmp/terraform
+    state: absent
+
 - name: Download Terraform {{ terraform12.version }}
   get_url:
     url: https://releases.hashicorp.com/terraform/{{ terraform12.version }}/terraform_{{ terraform12.version }}_linux_amd64.zip
@@ -28,3 +51,13 @@
     dest: ~/.local/bin/
     creates: ~/.local/bin/terraform
     mode: u+x
+
+- name: Create Terraform's plugin cache folder
+  file:
+    path: ~/.terraform.d/plugin-cache
+    state: directory
+
+- name: Set up Terraform's plugin caching
+  lineinfile:
+    path: ~/.bashrc
+    line: "export TF_PLUGIN_CACHE_DIR='~/.terraform.d/plugin-cache'"
