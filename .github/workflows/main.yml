@@ -1,17 +1,17 @@
-name: CI
+name: ansible-lint
+
 on:
   pull_request:
     branches:
     - master
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout git branch
+      uses: actions/checkout@v2
+    - name: Install ansible-lint
+      run: sudo apt install ansible-lint
     - name: Run ansible-lint
-      uses: ansible/ansible-lint-action@v4.1.0
-      with:
-        args: -p
+      run: ansible-lint -p playbook.yml
