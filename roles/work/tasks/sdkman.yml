@@ -27,7 +27,6 @@
   changed_when: installation.rc == 0
   loop:
     - { name: 'java', version: '{{ adoptopenjdk11.version }}'}
-    - { name: 'java', version: '{{ adoptopenjdk8.version }}'}
 
 - name: Set up default JDK to {{ adoptopenjdk11.version }}
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk default java {{ adoptopenjdk11.version }}
