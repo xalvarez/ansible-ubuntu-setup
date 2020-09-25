@@ -16,8 +16,8 @@
   command: /tmp/install_sdkman.sh
   when: not sdkman.stat.exists
 
-- name: Install SDKMAN! applications
-  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install {{ item.name }} {{ item.version }}
+- name: Install AdoptOpenJDK {{ adoptopenjdk11.version }}
+  shell: . ~/.sdkman/bin/sdkman-init.sh && sdk install java {{ adoptopenjdk11.version }}
   args:
     executable: /bin/bash
   register: installation
@@ -25,8 +25,6 @@
     - installation.rc != 0
     - '"is already installed" not in installation.stdout'
   changed_when: installation.rc == 0
-  loop:
-    - { name: 'java', version: '{{ adoptopenjdk11.version }}'}
 
 - name: Set up default JDK to {{ adoptopenjdk11.version }}
   shell: . ~/.sdkman/bin/sdkman-init.sh && sdk default java {{ adoptopenjdk11.version }}

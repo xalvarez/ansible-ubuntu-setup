@@ -1,9 +1,6 @@
 adoptopenjdk14:
   version: 14.0.2.hs-adpt
 
-adoptopenjdk13:
-  version: 13.0.2.hs-adpt
-
 docker_compose:
   version: 1.27.2
 
