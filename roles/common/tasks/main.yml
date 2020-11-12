@@ -1,13 +1,13 @@
 ---
+- import_tasks: apt.yml
+- import_tasks: snap.yml
+- import_tasks: flatpak.yml
+
 - name: Add .local/bin to $PATH
   lineinfile:
     path: ~/.bashrc
     line: PATH="$HOME/.local/bin:$PATH"
   become: no
-
-- import_tasks: apt.yml
-- import_tasks: snap.yml
-- import_tasks: flatpak.yml
 
 - name: Create alias for updating everything
   lineinfile:
