@@ -5,3 +5,10 @@
       - ampareqrcodelinux
       - shutter
       - standard-notes
+
+- name: Give standard-notes permissions to use linux keyring
+  command: snap connect standard-notes:password-manager-service
+  register: connection
+  failed_when:
+    - connection.rc != 0
+  changed_when: connection.rc == 0
