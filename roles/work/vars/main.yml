@@ -2,7 +2,7 @@ aws_nuke:
   version: 2.14.0
 
 payara:
-  version: 5.193.1
+  version: 5.2020.4
 
 saml2aws:
   version: 2.27.0
@@ -14,4 +14,4 @@ terraform12:
   version: 0.12.26
 
 terraform13:
-  version: 0.13.2
+  version: 0.13.5
