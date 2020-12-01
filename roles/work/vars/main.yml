@@ -2,7 +2,7 @@ aws_nuke:
   version: 2.14.0
 
 payara:
-  version: 5.2020.4
+  version: 5.2020.6
 
 saml2aws:
   version: 2.27.0
