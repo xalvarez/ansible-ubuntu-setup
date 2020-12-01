@@ -15,6 +15,9 @@
   become: no
   when: not toolbox.stat.exists
 
+- import_tasks: bash_git_prompt.yml
+  become: no
+
 - import_tasks: nodejs.yml
 - import_tasks: docker.yml
 
