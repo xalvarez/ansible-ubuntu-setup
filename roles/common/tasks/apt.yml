@@ -11,6 +11,7 @@
     packages:
     - chromium-browser
     - curl
+    - fish
     - flashplugin-installer
     - flatpak
     - fzf
