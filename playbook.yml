@@ -1,43 +1,20 @@
 ---
 - hosts: all
   pre_tasks:
-  - name: Verify Ansible version
-    assert:
-      that: "ansible_version.full is version_compare('2.9', '>=')"
-      fail_msg: This Ansible playbook requires Ansible version >= 2.9.1. Current version is {{ ansible_version.full }}
-      quiet: yes
-  tasks:
-    - name: Enable third-party sources
-      lineinfile:
-        path: /etc/apt/sources.list
-        regexp: '^#\s?(deb\s{1,}.*partner)$'
-        line: '\g<1>'
-        backrefs: yes
-    - name: Update repos and upgrade all packages
-      apt:
-        update_cache: yes
-        upgrade: safe
-        force_apt_get: yes
-    - name: Execute role 'common'
-      import_role:
-        name: common
+    - import_tasks: pre_tasks.yml
+      tags: ['common', 'gnome', 'dev', 'entertainment', 'work']
+  roles:
+    - role: common
       tags: ['common']
-    - name: Execute role 'gnome'
-      import_role:
-        name: gnome
+    - role: gnome
       tags: ['gnome']
-    - name: Execute role 'dev'
-      import_role:
-        name: dev
+    - role: dev
       tags: ['dev']
-    - name: Execute role 'entertainment'
-      import_role:
-        name: entertainment
+    - role: entertainment
       tags: ['entertainment']
-    - name: Execute role 'work'
-      import_role:
-        name: work
+    - role: work
       tags: ['work']
+  post_tasks:
     - name: Remove useless apt packages and dependencies
       apt:
         autoremove: yes

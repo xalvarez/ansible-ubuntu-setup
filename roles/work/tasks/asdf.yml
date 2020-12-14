@@ -1,0 +1,13 @@
+---
+- name: Set AdoptOpenJDK 11 as default version
+  shell: >
+    set -o pipefail && \
+    source ~/.bashrc && asdf latest java adoptopenjdk-11 \
+    | xargs -i sh -c '. ~/.bashrc && asdf install java {} && asdf global java {}'
+  args:
+    executable: /bin/bash
+  register: set_default_java
+  failed_when:
+    - set_default_java.rc != 0
+    - '"is already installed" not in set_default_java.stdout'
+  changed_when: set_default_java.rc == 0

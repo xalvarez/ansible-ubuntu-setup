@@ -1,0 +1,51 @@
+---
+- name: Check if asdf is already installed
+  stat:
+    path: ~/.asdf
+  register: asdf
+
+- name: Download asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: "{{ version }}"
+  when: not asdf.stat.exists
+
+- name: Create fish directory if missing
+  file:
+    path: ~/.config/fish
+    state: directory
+
+- name: Add asdf to config.fish
+  lineinfile:
+    path: ~/.config/fish/config.fish
+    line: "source ~/.asdf/asdf.fish"
+    create: yes
+
+- name: Create fish completions directory if missing
+  file:
+    path: ~/.config/fish/completions
+    state: directory
+
+- name: Check if fish completions need to be set up
+  stat:
+    path: ~/.config/fish/completions/asdf.fish
+  register: completions
+
+- name: Set up fish completions
+  command: cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+  args:
+    executable: /bin/bash
+  when: not completions.stat.exists
+
+- name: Add asdf to bashrc
+  blockinfile:
+    path: ~/.bashrc
+    marker: "# {mark} ANSIBLE MANAGED BLOCK (asdf)"
+    block: |
+      . ~/.asdf/asdf.sh
+      . ~/.asdf/completions/asdf.bash
+
+- name: Set up Java
+  import_tasks: java.yml
+

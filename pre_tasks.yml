@@ -1,0 +1,25 @@
+---
+- name: Verify Ansible version
+  assert:
+    that: "ansible_version.full is version_compare('2.9', '>=')"
+    fail_msg: This Ansible playbook requires Ansible version >= 2.9.1. Current version is {{ ansible_version.full }}
+    quiet: yes
+- name: Enable third-party sources
+  lineinfile:
+    path: /etc/apt/sources.list
+    regexp: '^#\s?(deb\s{1,}.*partner)$'
+    line: '\g<1>'
+    backrefs: yes
+- name: Update repos and upgrade all packages
+  apt:
+    update_cache: yes
+    upgrade: safe
+    force_apt_get: yes
+- name: Install fish shell
+  apt:
+    name: fish
+    force_apt_get: yes
+- name: Set current user's default shell to fish
+  user:
+    name: "{{ ansible_user }}"
+    shell: /usr/bin/fish
