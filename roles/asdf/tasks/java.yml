@@ -1,0 +1,22 @@
+---
+- name: Add asdf java plugin
+  shell: . ~/.bashrc && asdf plugin add java
+  register: add_plugin
+  failed_when: add_plugin.rc == 1
+  changed_when: add_plugin.rc == 0
+
+- name: Install AdoptOpenJDK 8, 11 and 14
+  shell: >
+    set -o pipefail && \
+    source ~/.bashrc && asdf latest java {{ item }} | xargs -i sh -c '. ~/.bashrc && asdf install java {}'
+  args:
+    executable: /bin/bash
+  register: install_other_java
+  failed_when:
+    - install_other_java.rc != 0
+    - '"is already installed" not in install_other_java.stdout'
+  changed_when: install_other_java.rc == 0
+  loop:
+    - adoptopenjdk-8
+    - adoptopenjdk-11
+    - adoptopenjdk-14

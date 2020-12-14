@@ -2,7 +2,7 @@
 - import_tasks: snap.yml
 - import_tasks: apt.yml
 
-- import_tasks: sdkman.yml
+- import_tasks: asdf.yml
   become: no
 
 - name: Check if Jetbrains Toolbox is already installed

@@ -2,7 +2,6 @@
 - import_tasks: apt.yml
 - import_tasks: snap.yml
 - import_tasks: flatpak.yml
-- import_tasks: fish.yml
 
 - name: Add .local/bin to $PATH
   lineinfile:

@@ -5,7 +5,7 @@
 - import_tasks: terraform.yml
   become: no
 
-- import_tasks: sdkman.yml
+- import_tasks: asdf.yml
   become: no
 
 - import_tasks: payara.yml
