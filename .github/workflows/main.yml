@@ -3,15 +3,15 @@ name: ansible-lint
 on:
   pull_request:
     branches:
-    - master
+      - main
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout git branch
-      uses: actions/checkout@v2
-    - name: Install ansible-lint
-      run: sudo apt install ansible-lint
-    - name: Run ansible-lint
-      run: ansible-lint -p playbook.yml
+      - name: Checkout git branch
+        uses: actions/checkout@v2
+      - name: Install ansible-lint
+        run: sudo apt install ansible-lint
+      - name: Run ansible-lint
+        run: ansible-lint -p playbook.yml
