@@ -1,0 +1,6 @@
+---
+- name: Remove useless apt packages and dependencies
+  apt:
+    autoremove: yes
+    autoclean: yes
+    force_apt_get: yes

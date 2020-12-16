@@ -15,9 +15,6 @@
     - role: work
       tags: ['work']
   post_tasks:
-    - name: Remove useless apt packages and dependencies
-      apt:
-        autoremove: yes
-        autoclean: yes
-        force_apt_get: yes
+    - import_tasks: post_tasks.yml
+      tags: ['common', 'gnome', 'dev', 'entertainment', 'work']
   become: yes
