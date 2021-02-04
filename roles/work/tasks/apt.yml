@@ -5,7 +5,6 @@
     force_apt_get: yes
   vars:
     packages:
-    - curl
     - flatpak
     - openvpn
     - python3-dev

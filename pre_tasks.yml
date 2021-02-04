@@ -15,11 +15,19 @@
     update_cache: yes
     upgrade: safe
     force_apt_get: yes
-- name: Install fish shell
+- name: Install apt packages
   apt:
-    name: fish
+    name: "{{ packages }}"
     force_apt_get: yes
+  vars:
+    packages:
+    - fish
+    - curl
 - name: Set current user's default shell to fish
   user:
     name: "{{ ansible_user }}"
     shell: /usr/bin/fish
+- name: Create ~/.local/bin directory if missing
+  file:
+    path: ~/.local/bin
+    state: directory

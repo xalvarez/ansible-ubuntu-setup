@@ -1,11 +1,9 @@
 ---
-- name: Set AdoptOpenJDK 14 as default version
-  shell: >
-    set -o pipefail && \
-    source ~/.bashrc && asdf latest java adoptopenjdk-14 \
-    | xargs -i sh -c '. ~/.bashrc && asdf install java {} && asdf global java {}'
-  args:
-    executable: /bin/bash
+- name: Set AdoptOpenJDK 14 as default version # noqa 306
+  shell: |
+    bash -ilc " \
+    asdf latest java adoptopenjdk-14 \
+    | xargs -i bash -ilc 'asdf install java {} && asdf global java {}'"
   register: set_default_java
   failed_when:
     - set_default_java.rc != 0
