@@ -10,7 +10,6 @@
   vars:
     packages:
     - chromium-browser
-    - curl
     - flashplugin-installer
     - flatpak
     - fzf
