@@ -1,5 +1,5 @@
 ---
-- name: Set AdoptOpenJDK 11 as default version # noqa 306
+- name: Set AdoptOpenJDK 11 as default version
   shell: |
     bash -ilc " \
     asdf latest java adoptopenjdk-11 \
@@ -9,3 +9,19 @@
     - set_default_java.rc != 0
     - '"is already installed" not in set_default_java.stdout'
   changed_when: set_default_java.rc == 0
+
+- name: Add asdf terraform plugin
+  shell: bash -ilc "asdf plugin add terraform"
+  register: add_terraform_plugin
+  failed_when: add_terraform_plugin.rc == 1
+  changed_when: add_terraform_plugin.rc == 0
+
+- name: Install latest terraform version
+  shell: |
+    bash -ilc " \
+    asdf latest terraform | xargs -i bash -ilc 'asdf install terraform {} && asdf global terraform {}'"
+  register: install_terraform
+  failed_when:
+    - install_terraform.rc != 0
+    - '"is already installed" not in install_terraform.stdout'
+  changed_when: install_terraform.rc == 0
