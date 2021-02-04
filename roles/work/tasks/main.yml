@@ -2,9 +2,6 @@
 - import_tasks: snap.yml
 - import_tasks: apt.yml
 
-- import_tasks: terraform.yml
-  become: no
-
 - import_tasks: asdf.yml
   become: no
 

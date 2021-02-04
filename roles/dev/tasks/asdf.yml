@@ -1,5 +1,5 @@
 ---
-- name: Set AdoptOpenJDK 14 as default version # noqa 306
+- name: Set AdoptOpenJDK 14 as default version
   shell: |
     bash -ilc " \
     asdf latest java adoptopenjdk-14 \

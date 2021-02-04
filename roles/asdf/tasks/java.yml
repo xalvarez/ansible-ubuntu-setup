@@ -1,11 +1,11 @@
 ---
 - name: Add asdf java plugin
-  shell: bash -ilc "asdf plugin add java" # noqa 305
+  shell: bash -ilc "asdf plugin add java"
   register: add_plugin
   failed_when: add_plugin.rc == 1
   changed_when: add_plugin.rc == 0
 
-- name: Install AdoptOpenJDK 8, 11 and 14 # noqa 306
+- name: Install AdoptOpenJDK 8, 11 and 14
   shell: |
     bash -ilc " \
     asdf latest java {{ item }} | xargs -i bash -ilc 'asdf install java {}'"
