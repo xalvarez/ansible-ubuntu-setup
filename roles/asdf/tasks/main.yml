@@ -34,8 +34,6 @@
 
 - name: Set up fish completions
   command: cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-  args:
-    executable: /bin/bash
   when: not completions.stat.exists
 
 - name: Add asdf to bashrc
