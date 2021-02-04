@@ -5,18 +5,13 @@
     classic: yes
   loop:
       - code
-      - hub
 
 - name: Install non-classic snaps
   snap:
-    name:
+    name: "{{ item }}"
+    classic: yes
+  loop:
       - insomnia
-
-- name: Create git alias for hub
-  lineinfile:
-    path: ~/.bashrc
-    line: "alias git='hub'"
-  become: no
 
 - import_tasks: visual_studio_code.yml
   become: no
