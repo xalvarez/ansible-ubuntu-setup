@@ -4,17 +4,20 @@
     that: "ansible_version.full is version_compare('2.9', '>=')"
     fail_msg: This Ansible playbook requires Ansible version >= 2.9.1. Current version is {{ ansible_version.full }}
     quiet: yes
+
 - name: Enable third-party sources
   lineinfile:
     path: /etc/apt/sources.list
     regexp: '^#\s?(deb\s{1,}.*partner)$'
     line: '\g<1>'
     backrefs: yes
+
 - name: Update repos and upgrade all packages
   apt:
     update_cache: yes
     upgrade: safe
     force_apt_get: yes
+
 - name: Install apt packages
   apt:
     name: "{{ packages }}"
@@ -23,10 +26,22 @@
     packages:
     - fish
     - curl
+
 - name: Set current user's default shell to fish
   user:
     name: "{{ ansible_user }}"
     shell: /usr/bin/fish
+
+- name: Create ~/.config/fish directory if missing
+  file:
+    path: ~/.config/fish
+    state: directory
+
+- name: Create ~/.config/fish/completions directory if missing
+  file:
+    path: ~/.config/fish/completions
+    state: directory
+
 - name: Create ~/.local/bin directory if missing
   file:
     path: ~/.local/bin
