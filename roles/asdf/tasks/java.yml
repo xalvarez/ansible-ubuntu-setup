@@ -6,9 +6,7 @@
   changed_when: add_plugin.rc == 0
 
 - name: Install AdoptOpenJDK 8, 11 and 14
-  shell: |
-    bash -ilc " \
-    asdf latest java {{ item }} | xargs -i bash -ilc 'asdf install java {}'"
+  shell: bash -ilc "asdf install java latest:{{ item }}"
   register: install_other_java
   failed_when:
     - install_other_java.rc != 0

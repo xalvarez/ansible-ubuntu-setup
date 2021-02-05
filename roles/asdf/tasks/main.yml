@@ -11,28 +11,18 @@
     version: "{{ version }}"
   when: not asdf.stat.exists
 
-- name: Create fish directory if missing
-  file:
-    path: ~/.config/fish
-    state: directory
-
 - name: Add asdf to config.fish
   lineinfile:
     path: ~/.config/fish/config.fish
     line: "source ~/.asdf/asdf.fish"
     create: yes
 
-- name: Create fish completions directory if missing
-  file:
-    path: ~/.config/fish/completions
-    state: directory
-
-- name: Check if fish completions need to be set up
+- name: Check if asdf fish completions need to be set up
   stat:
     path: ~/.config/fish/completions/asdf.fish
   register: completions
 
-- name: Set up fish completions
+- name: Set up asdf fish completions
   command: cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
   when: not completions.stat.exists
 
