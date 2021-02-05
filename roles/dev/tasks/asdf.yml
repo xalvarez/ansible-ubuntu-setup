@@ -1,15 +1,4 @@
 ---
-- name: Set AdoptOpenJDK 14 as default version
-  shell: |
-    bash -ilc " \
-    asdf latest java adoptopenjdk-14 \
-    | xargs -i bash -ilc 'asdf install java {} && asdf global java {}'"
-  register: set_default_java
-  failed_when:
-    - set_default_java.rc != 0
-    - '"is already installed" not in set_default_java.stdout'
-  changed_when: set_default_java.rc == 0
-
 - name: Add asdf plugins
   shell: bash -ilc "asdf plugin add {{ item }}"
   register: add_asdf_plugins
@@ -17,6 +6,7 @@
   changed_when: add_asdf_plugins.rc == 0
   loop:
     - github-cli
+    - java
 
 - name: Install asdf applications
   shell: |
@@ -29,3 +19,22 @@
   changed_when: install_asdf_apps.rc == 0
   loop:
     - github-cli
+
+- name: Install AdoptOpenJDK 11
+  shell: bash -ilc "asdf install java latest:adoptopenjdk-11"
+  register: install_adopt_11
+  failed_when:
+    - install_adopt_11 != 0
+    - '"is already installed" not in install_adopt_11.stdout'
+  changed_when: install_adopt_11.rc == 0
+
+- name: Install AdoptOpenJDK 14 and set it as default version
+  shell: |
+    bash -ilc " \
+    asdf latest java adoptopenjdk-14 \
+    | xargs -i bash -ilc 'asdf install java {} && asdf global java {}'"
+  register: set_default_java
+  failed_when:
+    - set_default_java.rc != 0
+    - '"is already installed" not in set_default_java.stdout'
+  changed_when: set_default_java.rc == 0
