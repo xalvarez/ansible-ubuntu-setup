@@ -3,6 +3,7 @@
   pre_tasks:
     - import_tasks: pre_tasks.yml
       tags: ['common', 'gnome', 'dev', 'entertainment', 'work']
+      become: no
   roles:
     - role: common
       tags: ['common']

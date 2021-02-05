@@ -1,21 +1,12 @@
 ---
-- name: Set AdoptOpenJDK 11 as default version
-  shell: |
-    bash -ilc " \
-    asdf latest java adoptopenjdk-11 \
-    | xargs -i bash -ilc 'asdf install java {} && asdf global java {}'"
-  register: set_default_java
-  failed_when:
-    - set_default_java.rc != 0
-    - '"is already installed" not in set_default_java.stdout'
-  changed_when: set_default_java.rc == 0
-
 - name: Add asdf plugins
   shell: bash -ilc "asdf plugin add {{ item }}"
   register: add_asdf_plugins
   failed_when: add_asdf_plugins.rc == 1
   changed_when: add_asdf_plugins.rc == 0
   loop:
+    - github-cli
+    - java
     - saml2aws
     - terraform
     - tfsec
@@ -30,6 +21,29 @@
     - '"is already installed" not in install_asdf_apps.stdout'
   changed_when: install_asdf_apps.rc == 0
   loop:
+    - github-cli
     - saml2aws
     - terraform
     - tfsec
+
+- name: Install AdoptOpenJDK 8 and 14
+  shell: bash -ilc "asdf install java latest:{{ item }}"
+  register: install_other_jdks
+  failed_when:
+    - install_other_jdks != 0
+    - '"is already installed" not in install_other_jdks.stdout'
+  changed_when: install_other_jdks.rc == 0
+  loop:
+    - adoptopenjdk-8
+    - adoptopenjdk-11
+
+- name: Install AdoptOpenJDK 11 and set it as default version
+  shell: |
+    bash -ilc " \
+    asdf latest java adoptopenjdk-11 \
+    | xargs -i bash -ilc 'asdf install java {} && asdf global java {}'"
+  register: set_default_java
+  failed_when:
+    - set_default_java.rc != 0
+    - '"is already installed" not in set_default_java.stdout'
+  changed_when: set_default_java.rc == 0
