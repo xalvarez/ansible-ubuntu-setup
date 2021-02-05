@@ -1,8 +1,8 @@
 docker_compose:
-  version: 1.28.2
+  version: 1.27.2
 
 jetbrains_toolbox:
-  version: 1.20.7940
+  version: 1.18.7455
 
 visual_studio_code:
   config: https://gist.githubusercontent.com/xalvarez/f6abc34fb56f766820db3a3cb1287a4a/raw/settings.json
