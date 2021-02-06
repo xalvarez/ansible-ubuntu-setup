@@ -11,5 +11,3 @@
     - { name: "alias.sw", value: "switch" }
     - { name: "alias.swn", value: "switch --no-track -c" }
     - { name: "alias.rs", value: "restore" }
-    - { name: "alias.pro", value: "pull-request -o" }
-    - { name: "alias.prd", value: "pull-request -do" }

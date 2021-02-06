@@ -1,9 +1,4 @@
 ---
-- name: Add Flathup repository
-  flatpak_remote:
-    name: flathub
-    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-
 - name: Install flatpak packages
   flatpak:
     name: "{{ item }}"

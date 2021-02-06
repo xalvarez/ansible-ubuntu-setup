@@ -6,4 +6,3 @@
   vars:
     packages:
     - ansible-lint
-    - httpie
