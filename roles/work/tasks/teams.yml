@@ -5,7 +5,7 @@
 
 - name: Add Teams apt repository
   apt_repository:
-    repo: deb https://packages.microsoft.com/repos/ms-teams stable main
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main
     filename: teams
 
 - name: Install Teams
