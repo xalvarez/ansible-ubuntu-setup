@@ -26,8 +26,9 @@
     force_apt_get: yes
   vars:
     packages:
-    - fish
     - curl
+    - fish
+    - jq
   become: yes
 
 - name: Create ~/.local/bin directory if missing
