@@ -11,14 +11,12 @@
     regexp: '^#\s?(deb\s{1,}.*partner)$'
     line: '\g<1>'
     backrefs: yes
-  become: yes
 
 - name: Update repos and upgrade all packages
   apt:
     update_cache: yes
     upgrade: safe
     force_apt_get: yes
-  become: yes
 
 - name: Install apt packages
   apt:
@@ -26,63 +24,21 @@
     force_apt_get: yes
   vars:
     packages:
-    - curl
-    - fish
-    - jq
-  become: yes
+    - flatpak
+
+- name: Add Flathup repository
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: Create ~/.local/bin directory if missing
   file:
     path: ~/.local/bin
     state: directory
+  become: no
 
-- name: Set current user's default shell to fish
-  user:
-    name: "{{ ansible_user }}"
-    shell: /usr/bin/fish
-  become: yes
-
-- name: Create fish directory if missing
-  file:
-    path: ~/.config/fish
-    state: directory
-
-- name: Add asdf to config.fish
+- name: Add .local/bin to $PATH
   lineinfile:
-    path: ~/.config/fish/config.fish
-    line: "source ~/.asdf/asdf.fish"
-    create: yes
-
-- name: Create fish completions directory if missing
-  file:
-    path: ~/.config/fish/completions
-    state: directory
-
-- name: Check if asdf is already installed
-  stat:
-    path: ~/.asdf
-  register: asdf
-
-- name: Download asdf
-  git:
-    repo: https://github.com/asdf-vm/asdf.git
-    dest: ~/.asdf
-    version: v0.8.0
-  when: not asdf.stat.exists
-
-- name: Check if asdf fish completions need to be set up
-  stat:
-    path: ~/.config/fish/completions/asdf.fish
-  register: completions
-
-- name: Set up asdf fish completions
-  command: cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-  when: not completions.stat.exists
-
-- name: Add asdf to bashrc
-  blockinfile:
     path: ~/.bashrc
-    marker: "# {mark} ANSIBLE MANAGED BLOCK (asdf)"
-    block: |
-      . ~/.asdf/asdf.sh
-      . ~/.asdf/completions/asdf.bash
+    line: PATH="$HOME/.local/bin:$PATH"
+  become: no

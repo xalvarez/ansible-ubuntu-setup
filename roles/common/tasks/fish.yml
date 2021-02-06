@@ -1,0 +1,16 @@
+---
+- name: Set current user's default shell to fish
+  user:
+    name: "{{ ansible_user }}"
+    shell: /usr/bin/fish
+  become: yes
+
+- name: Create fish directory if missing
+  file:
+    path: ~/.config/fish
+    state: directory
+
+- name: Create fish completions directory if missing
+  file:
+    path: ~/.config/fish/completions
+    state: directory

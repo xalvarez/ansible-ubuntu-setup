@@ -1,7 +1,16 @@
 ---
+- name: Install classic snaps
+  snap:
+    name: "{{ item }}"
+    classic: yes
+  loop:
+      - code
+
 - name: Install non-classic snaps
   snap:
-    name:
+    name: "{{ item }}"
+    classic: yes
+  loop:
       - ampareqrcodelinux
       - shutter
       - standard-notes
@@ -12,3 +21,6 @@
   failed_when:
     - connection.rc != 0
   changed_when: connection.rc == 0
+
+- import_tasks: visual_studio_code.yml
+  become: no

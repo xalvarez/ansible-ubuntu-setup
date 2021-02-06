@@ -10,14 +10,17 @@
   vars:
     packages:
     - chromium-browser
+    - curl
+    - fish
     - flashplugin-installer
     - flatpak
     - fzf
     - git
+    - httpie
+    - jq
     - keepassxc
-    - tldr
-    - ubuntu-restricted-extras
     - terminator
+    - ubuntu-restricted-extras
     - vim
 
 - import_tasks: terminator.yml

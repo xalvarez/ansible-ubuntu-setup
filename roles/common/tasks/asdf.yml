@@ -1,0 +1,69 @@
+---
+- name: Check if asdf is already installed
+  stat:
+    path: ~/.asdf
+  register: asdf_folder
+
+- name: Download asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: "{{ asdf.version }}"
+  when: not asdf_folder.stat.exists
+
+- name: Check if asdf fish completions need to be set up
+  stat:
+    path: ~/.config/fish/completions/asdf.fish
+  register: completions
+
+- name: Set up asdf fish completions
+  command: cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+  when: not completions.stat.exists
+
+- name: Add asdf to config.fish
+  lineinfile:
+    path: ~/.config/fish/config.fish
+    line: "source ~/.asdf/asdf.fish"
+    create: yes
+
+- name: Add asdf to bashrc
+  blockinfile:
+    path: ~/.bashrc
+    marker: "# {mark} ANSIBLE MANAGED BLOCK (asdf)"
+    block: |
+      . ~/.asdf/asdf.sh
+      . ~/.asdf/completions/asdf.bash
+
+- name: Add asdf plugins
+  shell: bash -ilc "asdf plugin add {{ item }}"
+  register: add_asdf_plugins
+  failed_when: add_asdf_plugins.rc == 1
+  changed_when: add_asdf_plugins.rc == 0
+  loop:
+    - github-cli
+    - java
+
+- name: Install asdf applications
+  shell: |
+    bash -ilc " \
+    asdf latest {{ item }} | xargs -i bash -ilc 'asdf install {{ item }} {}; asdf global {{ item }} {}'"
+  register: install_asdf_apps
+  failed_when:
+    - install_asdf_apps.rc != 0
+    - '"is already installed" not in install_asdf_apps.stdout'
+  changed_when: install_asdf_apps.rc == 0
+  loop:
+    - github-cli
+
+- name: Install AdoptOpenJDK 8, 11 and 14
+  shell: bash -ilc "asdf install java latest:{{ item }}"
+  register: install_other_jdks
+  failed_when:
+    - install_other_jdks != 0
+    - '"is already installed" not in install_other_jdks.stdout'
+  changed_when: install_other_jdks.rc == 0
+  loop:
+    - adoptopenjdk-8
+    - adoptopenjdk-11
+    - adoptopenjdk-14
+  ignore_errors: yes

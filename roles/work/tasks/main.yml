@@ -1,5 +1,4 @@
 ---
-- import_tasks: snap.yml
 - import_tasks: apt.yml
 
 - import_tasks: asdf.yml

@@ -3,14 +3,39 @@
 - import_tasks: snap.yml
 - import_tasks: flatpak.yml
 
-- name: Add .local/bin to $PATH
-  lineinfile:
-    path: ~/.bashrc
-    line: PATH="$HOME/.local/bin:$PATH"
+- import_tasks: fish.yml
+  become: no
+
+- import_tasks: asdf.yml
   become: no
 
 - name: Create alias for updating everything
   lineinfile:
     path: ~/.bashrc
     line: "alias uall='sudo apt update && sudo apt upgrade -y && sudo snap refresh && flatpak update -y'"
+  become: no
+
+- name: Check if Jetbrains Toolbox is already installed
+  stat:
+    path: ~/.local/bin/jetbrains-toolbox
+  register: toolbox
+  become: no
+
+- import_tasks: jetbrains_toolbox.yml
+  become: no
+  when: not toolbox.stat.exists
+
+- import_tasks: nodejs.yml
+- import_tasks: docker.yml
+
+- name: Create gradle wrapper alias
+  lineinfile:
+    path: ~/.bashrc
+    line: "alias gw='./gradlew'"
+  become: no
+
+- name: Create alias for custom HTTPie theme
+  lineinfile:
+    path: ~/.bashrc
+    line: "alias http='http -s monokai'"
   become: no

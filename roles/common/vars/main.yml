@@ -1,2 +1,14 @@
+asdf:
+  version: v0.8.0
+
+docker_compose:
+  version: 1.28.2
+
+jetbrains_toolbox:
+  version: 1.20.7940
+
 terminator:
   config: https://gist.githubusercontent.com/xalvarez/cdb6d9358e9822a4c952e461c50d28a4/raw/config
+
+visual_studio_code:
+  config: https://gist.githubusercontent.com/xalvarez/f6abc34fb56f766820db3a3cb1287a4a/raw/settings.json
