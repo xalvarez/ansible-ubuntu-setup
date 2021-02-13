@@ -1,0 +1,3 @@
+---
+- name: Install fx
+  shell: bash -ilc "~/.asdf/shims/npm i -g fx"

@@ -25,7 +25,6 @@
   become: no
   when: not toolbox.stat.exists
 
-- import_tasks: nodejs.yml
 - import_tasks: docker.yml
 
 - name: Create gradle wrapper alias
