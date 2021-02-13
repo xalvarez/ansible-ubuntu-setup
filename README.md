@@ -20,7 +20,7 @@ Do note that this playbook has only been tested with **Ubuntu 20.04**.
 
 ## Running the playbook
 
-In order to run this playbook execute the following command:
+In order to run this playbook, execute the following command:
 
 ```
 ansible-playbook playbook.yml -i inventory -K
