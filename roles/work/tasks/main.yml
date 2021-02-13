@@ -4,6 +4,9 @@
 - import_tasks: asdf.yml
   become: no
 
+- import_tasks: npm.yml
+  become: no
+
 - import_tasks: flatpak.yml
 - import_tasks: aws.yml
 - import_tasks: teams.yml
