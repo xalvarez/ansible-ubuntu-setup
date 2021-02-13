@@ -1,8 +1,18 @@
 ---
-- name: Install aws-cli
-  pip:
-    executable: /usr/bin/pip3
-    name: awscli
+- name: Download aws cli v2
+  get_url:
+    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: /tmp/awscliv2.zip
+  become: no
+
+- name: Unarchive aws cli v2
+  unarchive:
+    src: /tmp/awscliv2.zip
+    dest: /tmp
+  become: no
+
+- name: Install aws cli v2
+  command: /tmp/aws/install
 
 - import_tasks: aws_nuke.yml
   become: no
