@@ -42,6 +42,7 @@
   loop:
     - github-cli
     - java
+    - nodejs
 
 - name: Install asdf applications
   shell: |
@@ -66,4 +67,19 @@
     - adoptopenjdk-8
     - adoptopenjdk-11
     - adoptopenjdk-14
+  ignore_errors: yes
+
+- name: Install Node.js OpenPGP Keys
+  command: ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+- name: Install Node.js 12 and 14
+  shell: bash -ilc "asdf install nodejs latest:{{ item }}"
+  register: install_node
+  failed_when:
+    - install_node != 0
+    - '"is already installed" not in install_node.stdout'
+  changed_when: install_node.rc == 0
+  loop:
+    - 12
+    - 14
   ignore_errors: yes

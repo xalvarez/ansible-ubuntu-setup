@@ -10,3 +10,15 @@
     - '"is already installed" not in set_default_java.stdout'
   changed_when: set_default_java.rc == 0
   ignore_errors: yes
+
+- name: Set Node.js 14 as default version
+  shell: |
+    bash -ilc " \
+    asdf latest nodejs 14 \
+    | xargs -i bash -ilc 'asdf install nodejs {}; asdf global nodejs {}'"
+  register: set_default_node
+  failed_when:
+    - set_default_node.rc != 0
+    - '"is already installed" not in set_default_node.stdout'
+  changed_when: set_default_node.rc == 0
+  ignore_errors: yes
