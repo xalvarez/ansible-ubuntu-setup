@@ -56,7 +56,7 @@
   loop:
     - github-cli
 
-- name: Install AdoptOpenJDK 8, 11 and 14
+- name: Install AdoptOpenJDK 11 and 14
   shell: bash -ilc "asdf install java latest:{{ item }}"
   register: install_other_jdks
   failed_when:
@@ -64,7 +64,6 @@
     - '"is already installed" not in install_other_jdks.stdout'
   changed_when: install_other_jdks.rc == 0
   loop:
-    - adoptopenjdk-8
     - adoptopenjdk-11
     - adoptopenjdk-14
   ignore_errors: yes
