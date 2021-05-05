@@ -40,21 +40,8 @@
   failed_when: add_asdf_plugins.rc == 1
   changed_when: add_asdf_plugins.rc == 0
   loop:
-    - github-cli
     - java
     - nodejs
-
-- name: Install asdf applications
-  shell: |
-    bash -ilc " \
-    asdf latest {{ item }} | xargs -i bash -ilc 'asdf install {{ item }} {}; asdf global {{ item }} {}'"
-  register: install_asdf_apps
-  failed_when:
-    - install_asdf_apps.rc != 0
-    - '"is already installed" not in install_asdf_apps.stdout'
-  changed_when: install_asdf_apps.rc == 0
-  loop:
-    - github-cli
 
 - name: Install AdoptOpenJDK 11 and 14
   shell: bash -ilc "asdf install java latest:{{ item }}"
