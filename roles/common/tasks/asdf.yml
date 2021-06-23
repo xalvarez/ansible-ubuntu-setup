@@ -71,14 +71,13 @@
 - name: Install Node.js OpenPGP Keys
   command: ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-- name: Install Node.js 12 and 14
-  shell: bash -ilc "asdf install nodejs latest:{{ item }}"
+- name: Install Node.js 14
+  shell: |
+    bash -ilc " \
+    asdf latest nodejs 14 | xargs -i bash -ilc 'asdf install nodejs {}; asdf global nodejs {}'"
   register: install_node
   failed_when:
     - install_node != 0
     - '"is already installed" not in install_node.stdout'
   changed_when: install_node.rc == 0
-  loop:
-    - 12
-    - 14
   ignore_errors: yes
