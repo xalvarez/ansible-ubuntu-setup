@@ -8,8 +8,6 @@
       tags: ['home', 'work']
     - role: gnome
       tags: ['gnome']
-    - role: home
-      tags: ['home']
     - role: entertainment
       tags: ['entertainment']
     - role: work

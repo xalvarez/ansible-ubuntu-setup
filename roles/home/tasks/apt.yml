@@ -1,8 +1,0 @@
----
-- name: Install apt packages
-  apt:
-    name: "{{ packages }}"
-    force_apt_get: yes
-  vars:
-    packages:
-    - ansible-lint

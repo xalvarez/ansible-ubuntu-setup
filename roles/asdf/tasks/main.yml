@@ -1,0 +1,25 @@
+---
+- name: Add asdf {{ asdf_plugin }} plugin
+  command:
+    cmd: "~/.asdf/bin/asdf plugin add {{ asdf_plugin }}"
+    creates: "~/.asdf/plugins/{{ asdf_plugin }}"
+  ignore_errors: yes
+
+- name: Retrieve latest {{ asdf_plugin }} version
+  command: "~/.asdf/bin/asdf latest {{ asdf_plugin }} {{ asdf_version_prefix }}"
+  register: asdf_latest_version
+
+- name: Print latest {{ asdf_plugin }} version
+  debug:
+    msg: "{{ asdf_plugin }} latest version is: {{ asdf_latest_version.stdout }}"
+
+- name: Install asdf {{ asdf_plugin }} {{ asdf_latest_version.stdout }}
+  command:
+    cmd: "~/.asdf/bin/asdf install {{ asdf_plugin }} {{ asdf_latest_version.stdout }}"
+    creates: "~/.asdf/installs/{{ asdf_plugin }}/{{ asdf_latest_version.stdout }}"
+  ignore_errors: yes
+
+- name: Set {{ asdf_plugin }} {{ asdf_latest_version.stdout }} as default version
+  command:
+    cmd: "~/.asdf/bin/asdf global {{ asdf_plugin }} {{ asdf_latest_version.stdout }}"
+  when: asdf_set_default_version

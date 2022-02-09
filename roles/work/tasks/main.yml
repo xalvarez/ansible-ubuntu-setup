@@ -1,11 +1,26 @@
 ---
 - import_tasks: apt.yml
 
-- import_tasks: asdf.yml
-  become: no
-
-- import_tasks: npm.yml
-  become: no
+- name: Install asdf applications
+  include_role:
+    name: asdf
+    apply:
+      environment:
+        PATH: "{{ ansible_env.PATH }}:~/.asdf/bin/"
+      become: no
+  vars:
+    asdf_plugin: "{{ item.plugin }}"
+    asdf_version_prefix: "{{ item.version_prefix }}"
+    asdf_set_default_version: "{{ item.set_default_version }}"
+  loop:
+    - { plugin: java, version_prefix: temurin-11, set_default_version: true }
+    - { plugin: java, version_prefix: adoptopenjdk-14, set_default_version: false }
+    - { plugin: saml2aws, version_prefix: "", set_default_version: true }
+    - { plugin: nodejs, version_prefix: 14, set_default_version: true }
+    - { plugin: terraform, version_prefix: "", set_default_version: true }
+    - { plugin: tfsec, version_prefix: "", set_default_version: true }
+    - { plugin: lazydocker, version_prefix: "", set_default_version: true }
+    - { plugin: maven, version_prefix: "", set_default_version: true }
 
 - import_tasks: flatpak.yml
 - import_tasks: aws.yml
