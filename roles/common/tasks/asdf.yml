@@ -34,50 +34,17 @@
       . ~/.asdf/asdf.sh
       . ~/.asdf/completions/asdf.bash
 
-- name: Add asdf plugins
-  shell: bash -ilc "asdf plugin add {{ item }}"
-  register: add_asdf_plugins
-  failed_when: add_asdf_plugins.rc == 1
-  changed_when: add_asdf_plugins.rc == 0
-  loop:
-    - github-cli
-    - java
-    - nodejs
-
 - name: Install asdf applications
-  shell: |
-    bash -ilc " \
-    asdf latest {{ item }} | xargs -i bash -ilc 'asdf install {{ item }} {}; asdf global {{ item }} {}'"
-  register: install_asdf_apps
-  failed_when:
-    - install_asdf_apps.rc != 0
-    - '"is already installed" not in install_asdf_apps.stdout'
-  changed_when: install_asdf_apps.rc == 0
+  include_role:
+    name: asdf
+    apply:
+      environment:
+        PATH: "{{ ansible_env.PATH }}:~/.asdf/bin/"
+  vars:
+    asdf_plugin: "{{ item.plugin }}"
+    asdf_version_prefix: "{{ item.version_prefix }}"
+    asdf_set_default_version: "{{ item.set_default_version }}"
   loop:
-    - github-cli
-
-- name: Install AdoptOpenJDK 11 and 14
-  shell: bash -ilc "asdf install java latest:{{ item }}"
-  register: install_other_jdks
-  failed_when:
-    - install_other_jdks != 0
-    - '"is already installed" not in install_other_jdks.stdout'
-  changed_when: install_other_jdks.rc == 0
-  loop:
-    - adoptopenjdk-11
-    - adoptopenjdk-14
-  ignore_errors: yes
-
-- name: Install Node.js OpenPGP Keys
-  command: ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-
-- name: Install Node.js 14
-  shell: |
-    bash -ilc " \
-    asdf latest nodejs 14 | xargs -i bash -ilc 'asdf install nodejs {}; asdf global nodejs {}'"
-  register: install_node
-  failed_when:
-    - install_node != 0
-    - '"is already installed" not in install_node.stdout'
-  changed_when: install_node.rc == 0
-  ignore_errors: yes
+    - { plugin: java, version_prefix: temurin-11, set_default_version: false }
+    - { plugin: java, version_prefix: temurin-17, set_default_version: true }
+    - { plugin: nodejs, version_prefix: 16, set_default_version: true }
