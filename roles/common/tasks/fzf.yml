@@ -1,8 +1,0 @@
----
-- name: Set up fzf autocompletion
-  blockinfile:
-    path: ~/.bashrc
-    marker: "# {mark} ANSIBLE MANAGED BLOCK (fzf)"
-    block: |
-      source /usr/share/doc/fzf/examples/completion.bash
-      source /usr/share/doc/fzf/examples/key-bindings.bash

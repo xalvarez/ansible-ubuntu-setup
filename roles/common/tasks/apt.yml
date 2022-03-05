@@ -32,6 +32,3 @@
 
 - import_tasks: git.yml
   become: no
-
-- import_tasks: fzf.yml
-  become: no
