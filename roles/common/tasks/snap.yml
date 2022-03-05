@@ -12,7 +12,6 @@
     classic: yes
   loop:
       - ampareqrcodelinux
-      - ksnip
       - standard-notes
 
 - name: Give standard-notes permissions to use linux keyring
