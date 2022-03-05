@@ -1,7 +1,7 @@
 ---
 - name: Set current user's default shell to fish
   user:
-    name: "{{ ansible_user }}"
+    name: "{{ ansible_env.USER }}"
     shell: /usr/bin/fish
   become: yes
 
