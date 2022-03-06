@@ -1,0 +1,14 @@
+---
+- name: Add GitHub CLI signing key
+  apt_key:
+    url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+
+- name: Add GitHub CLI apt repository
+  apt_repository:
+    repo: deb [arch=amd64] https://cli.github.com/packages stable main
+    filename: github-cli
+
+- name: Install GitHub CLI
+  apt:
+    name: gh
+    force_apt_get: yes
