@@ -1,7 +1,0 @@
----
-- name: Install flatpak packages
-  flatpak:
-    name: "{{ item }}"
-  loop:
-    - com.spotify.Client
-  become: no

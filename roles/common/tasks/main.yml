@@ -1,7 +1,6 @@
 ---
 - import_tasks: apt.yml
 - import_tasks: snap.yml
-- import_tasks: flatpak.yml
 
 - import_tasks: fish.yml
   become: no
@@ -12,7 +11,7 @@
 - name: Create alias for updating everything
   lineinfile:
     path: ~/.bashrc
-    line: "alias uall='sudo apt update && sudo apt upgrade -y && sudo snap refresh && flatpak update -y'"
+    line: "alias uall='sudo apt update && sudo apt upgrade -y && sudo snap refresh'"
   become: no
 
 - name: Check if Jetbrains Toolbox is already installed

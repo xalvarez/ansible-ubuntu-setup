@@ -12,8 +12,8 @@
     - chromium-browser
     - curl
     - fish
-    - flatpak
     - fzf
+    - gimp
     - git
     - httpie
     - jq

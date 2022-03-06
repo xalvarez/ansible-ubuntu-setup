@@ -12,6 +12,7 @@
     classic: yes
   loop:
       - ampareqrcodelinux
+      - spotify
       - standard-notes
 
 - name: Give standard-notes permissions to use linux keyring

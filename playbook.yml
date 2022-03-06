@@ -8,8 +8,6 @@
       tags: ['home', 'work']
     - role: gnome
       tags: ['gnome']
-    - role: entertainment
-      tags: ['entertainment']
     - role: work
       tags: ['work']
   post_tasks:
