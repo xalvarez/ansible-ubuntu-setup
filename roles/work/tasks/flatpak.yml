@@ -1,7 +1,0 @@
----
-- name: Install flatpak packages
-  flatpak:
-    name: "{{ item }}"
-  loop:
-    - us.zoom.Zoom
-  become: no

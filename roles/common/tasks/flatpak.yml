@@ -1,7 +1,0 @@
----
-- name: Install flatpak packages
-  flatpak:
-    name: "{{ item }}"
-  loop:
-    - org.gimp.GIMP
-  become: no

@@ -11,19 +11,6 @@
     upgrade: safe
     force_apt_get: yes
 
-- name: Install apt packages
-  apt:
-    name: "{{ packages }}"
-    force_apt_get: yes
-  vars:
-    packages:
-    - flatpak
-
-- name: Add Flathup repository
-  flatpak_remote:
-    name: flathub
-    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-
 - name: Create ~/.local/bin directory if missing
   file:
     path: ~/.local/bin
