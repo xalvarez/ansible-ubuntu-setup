@@ -10,7 +10,7 @@
 
 - name: Allow running Docker without sudo
   user:
-    name: "{{ ansible_env.USER }}"
+    name: "{{ calling_user }}"
     groups: docker
     append: yes
 
