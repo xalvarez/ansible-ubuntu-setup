@@ -1,5 +1,5 @@
 ---
-- name: Add official KeePassXC respository
+- name: Add official KeePassXC repository
   apt_repository:
     repo: ppa:phoerious/keepassxc
 

@@ -20,14 +20,16 @@
     enabled: yes
     masked: no
 
+- name: Create ~/.docker/cli-plugins directory if missing
+  file:
+    path: ~/.docker/cli-plugins
+    state: directory
+    recurse: yes
+  become: no
+
 - name: Download Docker Compose
   get_url:
     url: https://github.com/docker/compose/releases/download/{{ docker_compose.version }}/docker-compose-Linux-x86_64
-    dest: ~/.local/bin/docker-compose
+    dest: ~/.docker/cli-plugins/docker-compose
     mode: u+x
   become: no
-
-- name: Enable Docker Compose autocompletion
-  get_url:
-    url: https://raw.githubusercontent.com/docker/compose/{{ docker_compose.version }}/contrib/completion/bash/docker-compose
-    dest: /etc/bash_completion.d/docker-compose
