@@ -14,3 +14,14 @@
   file:
     path: ~/.config/fish/completions
     state: directory
+
+- name: Create fish functions directory if missing
+  file:
+    path: ~/.config/fish/functions
+    state: directory
+
+- name: Copy fish fzf key bindings
+  copy:
+    src: "{{ role_path }}/files/fish_user_key_bindings.fish"
+    dest: ~/.config/fish/functions/
+    mode: 0664
