@@ -9,6 +9,7 @@
     force_apt_get: yes
   vars:
     packages:
+    - build-essential
     - chromium-browser
     - curl
     - fish
