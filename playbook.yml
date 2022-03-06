@@ -2,15 +2,15 @@
 - hosts: all
   pre_tasks:
     - import_tasks: pre_tasks.yml
-      tags: ['gnome', 'home', 'entertainment', 'work']
+      tags: ['gnome', 'work']
   roles:
     - role: common
-      tags: ['home', 'work']
+      tags: ['work']
     - role: gnome
       tags: ['gnome']
     - role: work
       tags: ['work']
   post_tasks:
     - import_tasks: post_tasks.yml
-      tags: ['common', 'gnome', 'home', 'entertainment', 'work']
+      tags: ['gnome', 'work']
   become: yes
