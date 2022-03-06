@@ -1,4 +1,8 @@
 ---
+- name: Add official GlobalProtect-openconnect repository
+  apt_repository:
+    repo: ppa:yuezk/globalprotect-openconnect
+
 - name: Install apt packages
   apt:
     name: "{{ packages }}"
@@ -8,3 +12,4 @@
     - python3-dev
     - python3-pip
     - pipx
+    - globalprotect-openconnect
