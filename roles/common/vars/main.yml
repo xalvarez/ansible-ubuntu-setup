@@ -5,7 +5,7 @@ docker_compose:
   version: v2.3.0
 
 jetbrains_toolbox:
-  version: 1.20.7940
+  version: 1.22.10970
 
 terminator:
   config: https://gist.githubusercontent.com/xalvarez/cdb6d9358e9822a4c952e461c50d28a4/raw/config
