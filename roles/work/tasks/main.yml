@@ -22,6 +22,9 @@
     - { plugin: lazydocker, version_prefix: "", set_default_version: true }
     - { plugin: maven, version_prefix: "", set_default_version: true }
 
+- import_tasks: npm.yml
+  become: no
+
 - import_tasks: github_cli.yml
 - import_tasks: aws.yml
 - import_tasks: teams.yml
