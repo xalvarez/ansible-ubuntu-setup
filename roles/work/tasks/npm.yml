@@ -1,0 +1,6 @@
+---
+- name: Install fx
+  command:
+    cmd: ~/.asdf/shims/npm i -g fx
+  environment:
+        PATH: "{{ ansible_env.PATH }}:~/.asdf/bin/"
