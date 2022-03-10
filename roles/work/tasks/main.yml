@@ -30,7 +30,8 @@
 - import_tasks: teams.yml
 
 - name: Create maven wrapper alias
-  lineinfile:
-    path: ~/.bashrc
-    line: "alias mw='./mvnw'"
+  copy:
+    src: "{{ role_path }}/files/fish/plugins/mw.fish"
+    dest: ~/.config/fish/functions/
+    mode: 0664
   become: no
