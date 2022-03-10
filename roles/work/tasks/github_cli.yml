@@ -12,3 +12,10 @@
   apt:
     name: gh
     force_apt_get: yes
+
+- name: Create pull request alias
+  copy:
+    src: "{{ role_path }}/files/fish/plugins/gpro.fish"
+    dest: ~/.config/fish/functions/
+    mode: 0664
+  become: no

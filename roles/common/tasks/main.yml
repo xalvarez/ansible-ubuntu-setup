@@ -19,9 +19,10 @@
   become: no
 
 - name: Create alias for updating everything
-  lineinfile:
-    path: ~/.bashrc
-    line: "alias uall='sudo apt update && sudo apt upgrade -y && sudo snap refresh'"
+  copy:
+    src: "{{ role_path }}/files/fish/plugins/uall.fish"
+    dest: ~/.config/fish/functions/
+    mode: 0664
   become: no
 
 - name: Check if Jetbrains Toolbox is already installed
@@ -37,13 +38,15 @@
 - import_tasks: docker.yml
 
 - name: Create gradle wrapper alias
-  lineinfile:
-    path: ~/.bashrc
-    line: "alias gw='./gradlew'"
+  copy:
+    src: "{{ role_path }}/files/fish/plugins/gw.fish"
+    dest: ~/.config/fish/functions/
+    mode: 0664
   become: no
 
 - name: Create alias for custom HTTPie theme
-  lineinfile:
-    path: ~/.bashrc
-    line: "alias http='http -s monokai'"
+  copy:
+    src: "{{ role_path }}/files/fish/plugins/http.fish"
+    dest: ~/.config/fish/functions/
+    mode: 0664
   become: no

@@ -22,6 +22,6 @@
 
 - name: Copy fish fzf key bindings
   copy:
-    src: "{{ role_path }}/files/fish_user_key_bindings.fish"
+    src: "{{ role_path }}/files/fish/plugins/fish_user_key_bindings.fish"
     dest: ~/.config/fish/functions/
     mode: 0664
