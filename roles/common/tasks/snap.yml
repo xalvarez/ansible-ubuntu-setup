@@ -21,6 +21,3 @@
   failed_when:
     - connection.rc != 0
   changed_when: connection.rc == 0
-
-- import_tasks: visual_studio_code.yml
-  become: no
