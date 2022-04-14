@@ -1,5 +1,7 @@
 # Ansible Ubuntu Setup
 
+**Note: The current `main` version is currently being actively developed and hasn't been tested with Ubuntu 22.04 stable release yet.**
+
 This repository contains an Ansible playbook whose aim is to save time setting up Ubuntu machines.
 
 The script is adapted to my own needs and preferences, so if you like the idea you might
