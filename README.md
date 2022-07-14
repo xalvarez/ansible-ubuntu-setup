@@ -1,6 +1,6 @@
 # Ansible Ubuntu Setup
 
-**Note: The current `main` version is currently being actively developed and hasn't been tested with Ubuntu 22.04 stable release yet.**
+**Note: Due to significant changes on Ubuntu 22.04 which have made the distribution less attractive to me, I've stopped working on this repository. `main` version might be unstable.**
 
 This repository contains an Ansible playbook whose aim is to save time setting up Ubuntu machines.
 
